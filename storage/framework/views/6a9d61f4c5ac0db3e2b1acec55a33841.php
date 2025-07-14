@@ -1,12 +1,12 @@
-@extends('layouts.master')
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <section class="work_detail-header bg_cover" style="background-image: url('assets/img/work/detail.jpg');">
     	<div class="container container-menu">
     		<div class="row">
     			<div class="col-lg-12">
     				<div class="work_detail-logo">
     					<div class="img">
-    						<img src="{{ asset('assets/assets/img/work/sun.png') }}" alt="work">
+    						<img src="<?php echo e(asset('assets/assets/img/work/sun.png')); ?>" alt="work">
     					</div>
     					<p class="hast_work"><span>#</span>Eternal</p>
     					<h4 class="technology_detail-title">The best app of the best 2024</h4>
@@ -16,10 +16,10 @@
     							<div class="technology-title">Backend</div>
     							<div class="technology-list">
     								<ul>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/df.png') }}" alt="lan"></span>Django</li>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/1.png') }}" alt="lan"></span>Python</li>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/PostgreSQL.png') }}" alt="lan"></span>PostgreSQL</li>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/celery.png') }}" alt="lan"></span>Celery</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/df.png')); ?>" alt="lan"></span>Django</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/1.png')); ?>" alt="lan"></span>Python</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/PostgreSQL.png')); ?>" alt="lan"></span>PostgreSQL</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/celery.png')); ?>" alt="lan"></span>Celery</li>
     								</ul>
     							</div>
     						</div>
@@ -40,12 +40,12 @@
     							<div class="technology-title">Frontend</div>
     							<div class="technology-list">
     								<ul>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/s.png') }}" alt="lang"></span>JavaScript</li>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/css.png') }}" alt="lang"></span>CSS3</li>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/sass.png') }}" alt="lang"></span>Sass</li>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/react.png') }}" alt="lang"></span>React</li>
-                                        <li><span><img src="{{ asset('assets/assets/img/tool/redux.png') }}" alt="lang"></span>Redux</li>
-                                        <li><span><img src="{{ asset('assets/assets/img/tool/next.png') }}" alt="lang"></span>Next.js</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/s.png')); ?>" alt="lang"></span>JavaScript</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/css.png')); ?>" alt="lang"></span>CSS3</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/sass.png')); ?>" alt="lang"></span>Sass</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/react.png')); ?>" alt="lang"></span>React</li>
+                                        <li><span><img src="<?php echo e(asset('assets/assets/img/tool/redux.png')); ?>" alt="lang"></span>Redux</li>
+                                        <li><span><img src="<?php echo e(asset('assets/assets/img/tool/next.png')); ?>" alt="lang"></span>Next.js</li>
     								</ul>
     							</div>
     						</div>
@@ -65,10 +65,10 @@
     							<div class="technology-title">Tools</div>
     							<div class="technology-list">
     								<ul>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/aws.png') }}" alt="LAN"></span>AWS</li>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/git.png') }}" alt="LAN"></span>Git</li>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/Docker.png') }}" alt="LAN"></span>Docker</li>
-    									<li><span><img src="{{ asset('assets/assets/img/tool/jenkins.png') }}" alt="LAN"></span>Jenkins</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/aws.png')); ?>" alt="LAN"></span>AWS</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/git.png')); ?>" alt="LAN"></span>Git</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/Docker.png')); ?>" alt="LAN"></span>Docker</li>
+    									<li><span><img src="<?php echo e(asset('assets/assets/img/tool/jenkins.png')); ?>" alt="LAN"></span>Jenkins</li>
     								</ul>
     							</div>
     						</div>
@@ -164,22 +164,22 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="example-img">
-                      <a href="#"><img src="{{ asset('assets/assets/img/develop/p1.png') }}" alt="work"></a>  
+                      <a href="#"><img src="<?php echo e(asset('assets/assets/img/develop/p1.png')); ?>" alt="work"></a>  
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="example-img">
-                        <a href="#"><img src="{{ asset('assets/assets/img/develop/p4.png') }}" alt="work"></a>
+                        <a href="#"><img src="<?php echo e(asset('assets/assets/img/develop/p4.png')); ?>" alt="work"></a>
                     </div>
                 </div>
                  <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="example-img">
-                      <a href="#"><img src="{{ asset('assets/assets/img/develop/p.png') }}" alt="work"></a>  
+                      <a href="#"><img src="<?php echo e(asset('assets/assets/img/develop/p.png')); ?>" alt="work"></a>  
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="example-img">
-                        <a href="#"><img src="{{ asset('assets/assets/img/develop/p3.png') }}" alt="work"></a>
+                        <a href="#"><img src="<?php echo e(asset('assets/assets/img/develop/p3.png')); ?>" alt="work"></a>
                     </div>
                 </div>
             </div>
@@ -239,9 +239,9 @@
                 <div class="col-lg-4 offset-lg-1 work-left col-md-6">
                     <div class="work-item wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/1.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/resturon.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f4.png') }}" alt="work"> 
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/1.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/resturon.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f4.png')); ?>" alt="work"> 
                         </div>
                         <div class="work-content">
                             <div class="work-title">
@@ -262,9 +262,9 @@
                     </div>
                     <div class="work-item  wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="0ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/2.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/furnishing.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f3.png') }}" alt="work">
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/2.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/furnishing.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f3.png')); ?>" alt="work">
                         </div>
                         <div class="work-content">
                             <div class="work-title">
@@ -287,9 +287,9 @@
                   <div class="col-lg-4 offset-lg-1 col-md-6">
                     <div class="work-item wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="50ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/3.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/army.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f1.png') }}" alt="work">
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/3.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/army.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f1.png')); ?>" alt="work">
                         </div>
                         <div class="work-content">
                             <div class="work-title">
@@ -310,9 +310,9 @@
                     </div>
                     <div class="work-item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="50ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/4.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/t1.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f2.png') }}" alt="work">
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/4.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/t1.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f2.png')); ?>" alt="work">
                         </div>
                         <div class="work-content">
                             <div class="work-title">
@@ -359,4 +359,5 @@
         </div>
     </section>
     <!-- work area end-->
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\appdev\resources\views/template/product_detail.blade.php ENDPATH**/ ?>

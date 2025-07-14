@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ExpenseHeadController;
-use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\Admin\SettingController;
 
 use App\Http\Controllers\Admin\ExpenseController;
@@ -145,6 +145,16 @@ Route::prefix('panel')->middleware(['auth', 'checkRole:admin'])->group(function 
     Route::middleware(['permission:account_edit'])->get('/accounts/{account}/edit', [AccountController::class, 'edit'])->name('accounts.edit');
     Route::middleware(['permission:account_edit'])->put('/accounts/{account}/update', [AccountController::class, 'update'])->name('accounts.update');
     Route::middleware(['permission:account_delete'])->delete('/accounts/{account}/destroy', [AccountController::class, 'destroy'])->name('accounts.destroy');
+});
 
 
+Route::controller(PageController::class)->group(function () {
+    Route::get('/services', 'services')->name('services');
+    Route::get('/service-details', 'service_details')->name('service.details');
+
+    Route::get('/products', 'products')->name('products');
+    Route::get('/product-details', 'product_details')->name('product.details');
+
+    Route::get('/about-us', 'about')->name('about');
+    Route::get('/contact', 'contact')->name('contact');
 });

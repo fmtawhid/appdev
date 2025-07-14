@@ -1,5 +1,4 @@
-@extends('layouts.master')
-@section('content')
+<?php $__env->startSection('content'); ?>
     <!-- page-header start-->
   	<section class="all_page-header" style="background-image: url('assets/img/service/service_detail.jpg');">
   		<div class="conatiner container-menu">
@@ -29,25 +28,25 @@
                         <!-- develop-single -->
                         <div class="moblie_develop-single">
                             <div class="img">
-                                <img src="{{ asset('assets/assets/img/develop/m1.png') }}" alt="png">
+                                <img src="<?php echo e(asset('assets/assets/img/develop/m1.png')); ?>" alt="png">
                             </div>
                         </div>
                         <!-- develop-single -->
                         <div class="moblie_develop-single moblie_develop-single2">
                             <div class="img">
-                                <img src="{{ asset('assets/assets/img/develop/m2.png') }}" alt="png">
+                                <img src="<?php echo e(asset('assets/assets/img/develop/m2.png')); ?>" alt="png">
                             </div>
                         </div>
                         <!-- develop-single -->
                         <div class="moblie_develop-single">
                             <div class="img">
-                                <img src="{{ asset('assets/assets/img/develop/m3.png') }}" alt="png">
+                                <img src="<?php echo e(asset('assets/assets/img/develop/m3.png')); ?>" alt="png">
                             </div>
                         </div>
                         <!-- develop-single -->
                         <div class="moblie_develop-single moblie_develop-single2">
                             <div class="img">
-                                <img src="{{ asset('assets/assets/img/develop/m4.png') }}" alt="png">
+                                <img src="<?php echo e(asset('assets/assets/img/develop/m4.png')); ?>" alt="png">
                             </div>
                         </div>
                     </div>
@@ -148,7 +147,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
                                 <div class="service_tool-single">
                                     <div class="service_tool-icon">
-                                        <img src="{{ asset('assets/assets/img/tool/angular.png') }}" alt="tool">
+                                        <img src="<?php echo e(asset('assets/assets/img/tool/angular.png')); ?>" alt="tool">
                                     </div>
                                     <div class="service_tool-line"></div>
                                     <a class="service_tool-link" href="project_detail.html">Angular</a>
@@ -157,7 +156,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
                                 <div class="service_tool-single">
                                     <div class="service_tool-icon">
-                                        <img src="{{ asset('assets/assets/img/tool/react.png') }}" alt="tool">
+                                        <img src="<?php echo e(asset('assets/assets/img/tool/react.png')); ?>" alt="tool">
                                     </div>
                                     <div class="service_tool-line"></div>
                                     <a class="service_tool-link" href="project_detail.html">React</a>
@@ -166,7 +165,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
                                 <div class="service_tool-single">
                                     <div class="service_tool-icon">
-                                        <img src="{{ asset('assets/assets/img/tool/kotlin.png') }}" alt="tool">
+                                        <img src="<?php echo e(asset('assets/assets/img/tool/kotlin.png')); ?>" alt="tool">
                                     </div>
                                     <div class="service_tool-line"></div>
                                     <a class="service_tool-link" href="project_detail.html">Kotlin</a>
@@ -175,7 +174,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
                                 <div class="service_tool-single">
                                     <div class="service_tool-icon">
-                                        <img src="{{ asset('assets/assets/img/tool/java.png') }}" alt="tool">
+                                        <img src="<?php echo e(asset('assets/assets/img/tool/java.png')); ?>" alt="tool">
                                     </div>
                                     <div class="service_tool-line"></div>
                                     <a class="service_tool-link" href="project_detail.html">Java</a>
@@ -193,7 +192,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
                                 <div class="service_tool-single">
                                     <div class="service_tool-icon">
-                                        <img src="{{ asset('assets/assets/img/tool/flutter.png') }}" alt="tool">
+                                        <img src="<?php echo e(asset('assets/assets/img/tool/flutter.png')); ?>" alt="tool">
                                     </div>
                                     <div class="service_tool-line"></div>
                                     <a class="service_tool-link" href="project_detail.html">Flutter</a>
@@ -202,7 +201,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
                                 <div class="service_tool-single">
                                     <div class="service_tool-icon">
-                                        <img src="{{ asset('assets/assets/img/tool/react.png') }}" alt="tool">
+                                        <img src="<?php echo e(asset('assets/assets/img/tool/react.png')); ?>" alt="tool">
                                     </div>
                                     <div class="service_tool-line"></div>
                                     <a class="service_tool-link" href="project_detail.html">React</a>
@@ -211,7 +210,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
                                 <div class="service_tool-single">
                                     <div class="service_tool-icon">
-                                        <img src="{{ asset('assets/assets/img/tool/kotlin.png') }}" alt="tool">
+                                        <img src="<?php echo e(asset('assets/assets/img/tool/kotlin.png')); ?>" alt="tool">
                                     </div>
                                     <div class="service_tool-line"></div>
                                     <a class="service_tool-link" href="project_detail.html">Kotlin</a>
@@ -220,7 +219,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
                                 <div class="service_tool-single">
                                     <div class="service_tool-icon">
-                                        <img src="{{ asset('assets/assets/img/tool/java.png') }}" alt="tool">
+                                        <img src="<?php echo e(asset('assets/assets/img/tool/java.png')); ?>" alt="tool">
                                     </div>
                                     <div class="service_tool-line"></div>
                                     <a class="service_tool-link" href="project_detail.html">Java</a>
@@ -255,7 +254,7 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 align-self-center">
                     <div class="client-video">
-                        <img src="{{ asset('assets/assets/img/insight/in6.jpg') }}" alt="video">
+                        <img src="<?php echo e(asset('assets/assets/img/insight/in6.jpg')); ?>" alt="video">
                         <div class="technology-video">
                             <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=Z0A7OMkYQf8">
                                 <i class="fas fa-play"></i>
@@ -274,9 +273,9 @@
                 <div class="col-lg-4 offset-lg-1 work-left col-md-6">
                     <div class="work-item wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/6.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/football.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f4.png') }}" alt="work">
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/6.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/football.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f4.png')); ?>" alt="work">
 
                         </div>
                         <div class="work-content">
@@ -299,9 +298,9 @@
                     </div>
                     <div class="work-item  wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="0ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/7.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/easyzet.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f6.png') }}" alt="work">
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/7.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/easyzet.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f6.png')); ?>" alt="work">
                         </div>
                         <div class="work-content">
                             <div class="work-title">
@@ -324,9 +323,9 @@
                 <div class="col-lg-4 offset-lg-1 col-md-6">
                     <div class="work-item wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="50ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/5.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/mediplant.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f7.png') }}" alt="work">
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/5.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/mediplant.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f7.png')); ?>" alt="work">
                         </div>
                         <div class="work-content">
                             <div class="work-title">
@@ -347,9 +346,9 @@
                     </div>
                     <div class="work-item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="50ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/1.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/resturon.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f8.png') }}" alt="work">
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/1.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/resturon.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f8.png')); ?>" alt="work">
                         </div>
                         <div class="work-content">
                             <div class="work-title">
@@ -593,55 +592,55 @@
             </div>
             <div class="project_design-slider owl-carousel">
                 <div class="project_desgin-single">
-                   <a href="{{ asset('assets/assets/img/design/1.jpg') }}"><img src="{{ asset('assets/assets/img/design/1.jpg') }}" alt="design"></a>
+                   <a href="<?php echo e(asset('assets/assets/img/design/1.jpg')); ?>"><img src="<?php echo e(asset('assets/assets/img/design/1.jpg')); ?>" alt="design"></a>
                    <div class="design_overly">
                     <div class="zoom"><i class="fas fa-search"></i></div>
                   </div> 
                 </div>
                  <div class="project_desgin-single">
-                   <a href="{{ asset('assets/assets/img/design/2.jpg') }}"><img src="{{ asset('assets/assets/img/design/2.jpg') }}" alt="design">
+                   <a href="<?php echo e(asset('assets/assets/img/design/2.jpg')); ?>"><img src="<?php echo e(asset('assets/assets/img/design/2.jpg')); ?>" alt="design">
                    <div class="design_overly">
                     <div class="zoom"><i class="fas fa-search"></i></div>
                   </div> 
                   </a> 
                 </div>
                  <div class="project_desgin-single">
-                   <a href="{{ asset('assets/assets/img/design/3.jpg') }}"><img src="{{ asset('assets/assets/img/design/3.jpg') }}" alt="design">
+                   <a href="<?php echo e(asset('assets/assets/img/design/3.jpg')); ?>"><img src="<?php echo e(asset('assets/assets/img/design/3.jpg')); ?>" alt="design">
                    <div class="design_overly">
                     <div class="zoom"><i class="fas fa-search"></i></div>
                   </div>
                   </a>  
                 </div>
                  <div class="project_desgin-single">
-                   <a href="{{ asset('assets/assets/img/design/4.jpg') }}"><img src="{{ asset('assets/assets/img/design/4.jpg') }}" alt="design">
+                   <a href="<?php echo e(asset('assets/assets/img/design/4.jpg')); ?>"><img src="<?php echo e(asset('assets/assets/img/design/4.jpg')); ?>" alt="design">
                    <div class="design_overly">
                     <div class="zoom"><i class="fas fa-search"></i></div>
                   </div> 
                   </a> 
                 </div>
                  <div class="project_desgin-single">
-                   <a href="{{ asset('assets/assets/img/design/5.jpg') }}"><img src="{{ asset('assets/assets/img/design/5.jpg') }}" alt="design">
+                   <a href="<?php echo e(asset('assets/assets/img/design/5.jpg')); ?>"><img src="<?php echo e(asset('assets/assets/img/design/5.jpg')); ?>" alt="design">
                    <div class="design_overly">
                     <div class="zoom"><i class="fas fa-search"></i></div>
                   </div> 
                   </a> 
                 </div>
                  <div class="project_desgin-single">
-                   <a href="{{ asset('assets/assets/img/design/6.jpg') }}"><img src="{{ asset('assets/assets/img/design/6.jpg') }}" alt="design">
+                   <a href="<?php echo e(asset('assets/assets/img/design/6.jpg')); ?>"><img src="<?php echo e(asset('assets/assets/img/design/6.jpg')); ?>" alt="design">
                    <div class="design_overly">
                     <div class="zoom"><i class="fas fa-search"></i></div>
                   </div> 
                   </a> 
                 </div>
                  <div class="project_desgin-single">
-                   <a href="{{ asset('assets/assets/img/design/7.jpg') }}"><img src="{{ asset('assets/assets/img/design/7.jpg') }}" alt="design">
+                   <a href="<?php echo e(asset('assets/assets/img/design/7.jpg')); ?>"><img src="<?php echo e(asset('assets/assets/img/design/7.jpg')); ?>" alt="design">
                    <div class="design_overly">
                     <div class="zoom"><i class="fas fa-search"></i></div>
                   </div> 
                   </a> 
                 </div>
                 <div class="project_desgin-single">
-                   <a href="{{ asset('assets/assets/img/design/8.jpg') }}"><img src="{{ asset('assets/assets/img/design/8.jpg') }}" alt="design">
+                   <a href="<?php echo e(asset('assets/assets/img/design/8.jpg')); ?>"><img src="<?php echo e(asset('assets/assets/img/design/8.jpg')); ?>" alt="design">
                    <div class="design_overly">
                     <div class="zoom"><i class="fas fa-search"></i></div>
                   </div> 
@@ -847,7 +846,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="insight-blog-single insight-blog-single_tow">
                         <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in1.jpg') }}" alt="inb">
+                            <img src="<?php echo e(asset('assets/assets/img/insight/in1.jpg')); ?>" alt="inb">
                             <div class="read_more-now">
                                 <div class="icon"><i class="far fa-comment-alt"></i></div>
                                 <h4><a href="insight_detail.html">more</a></h4>
@@ -869,7 +868,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="insight-blog-single insight-blog-single_tow">
                         <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in2.jpg') }}" alt="inb">
+                            <img src="<?php echo e(asset('assets/assets/img/insight/in2.jpg')); ?>" alt="inb">
                             <div class="read_more-now">
                                 <div class="technology-video">
                                     <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=Z0A7OMkYQf8">
@@ -894,7 +893,7 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="insight-blog-single insight-blog-single_tow">
                         <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in4.jpg') }}" alt="inb">
+                            <img src="<?php echo e(asset('assets/assets/img/insight/in4.jpg')); ?>" alt="inb">
                             <div class="read_more-now">
                                 <div class="icon"><i class="far fa-comment-alt"></i></div>
                                 <h4><a href="insight_detail.html">more</a></h4>
@@ -934,7 +933,7 @@
                                 <p>Senior App Developer</p>
                             </div>
                             <div class="personal-img">
-                                <img src="{{ asset('assets/assets/img/membar/md.png') }}" alt="personal">
+                                <img src="<?php echo e(asset('assets/assets/img/membar/md.png')); ?>" alt="personal">
                             </div>
                         </div>
                     </div>
@@ -956,7 +955,7 @@
                                 <p> DevOps Engineer</p>
                             </div>
                             <div class="personal-img">
-                                <img src="{{ asset('assets/assets/img/membar/founder.png') }}" alt="personal">
+                                <img src="<?php echo e(asset('assets/assets/img/membar/founder.png')); ?>" alt="personal">
                             </div>
                         </div>
                     </div>
@@ -983,4 +982,5 @@
         </div>
     </section>
     <!-- work with us end -->
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\appdev\resources\views/template/service_detail.blade.php ENDPATH**/ ?>

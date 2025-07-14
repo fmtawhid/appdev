@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use function view;
+ 
 
 class PageController extends Controller
 {

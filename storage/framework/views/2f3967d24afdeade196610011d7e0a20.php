@@ -1,10 +1,10 @@
-@extends('layouts.master')
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <!-- page-header start-->
     <section class="video_page-header insight_page-header">
         <div class="in_video">
             <video autoplay muted loop>
-                  <source src="{{ asset('assets/assets/img/insight/header.mp4') }}" type="video/mp4">
+                  <source src="<?php echo e(asset('assets/assets/img/insight/header.mp4')); ?>" type="video/mp4">
             </video>
             <div class="insight_page-content video_page-content">
                 <div class="insight_page-text video_page-text">
@@ -18,10 +18,10 @@
                     </div>
                     <div class="partanar-header_icon">
                         <ul>
-                            <li><img src="{{ asset('assets/assets/img/work/army.png') }}" alt="p"></li>
-                            <li><img src="{{ asset('assets/assets/img/work/football.png') }}" alt="p"></li>
-                            <li><img src="{{ asset('assets/assets/img/work/logo6.png') }}" alt="p"></li>
-                            <li><img src="{{ asset('assets/assets/img/work/agrifram.png') }}" alt="p"></li>
+                            <li><img src="<?php echo e(asset('assets/assets/img/work/army.png')); ?>" alt="p"></li>
+                            <li><img src="<?php echo e(asset('assets/assets/img/work/football.png')); ?>" alt="p"></li>
+                            <li><img src="<?php echo e(asset('assets/assets/img/work/logo6.png')); ?>" alt="p"></li>
+                            <li><img src="<?php echo e(asset('assets/assets/img/work/agrifram.png')); ?>" alt="p"></li>
                         </ul>
                     </div>
                 </div>
@@ -159,49 +159,49 @@
                    <div class="our_partnership-tool">
                        <div class="partnership_tool-single">
                            <div class="img">
-                               <img src="{{ asset('assets/assets/img/tool/1.png') }}" alt="tool">
+                               <img src="<?php echo e(asset('assets/assets/img/tool/1.png')); ?>" alt="tool">
                            </div>
                            <span>Paython</span>
                        </div>
                        <div class="partnership_tool-single">
                            <div class="img">
-                               <img src="{{ asset('assets/assets/img/tool/java.png') }}" alt="tool">
+                               <img src="<?php echo e(asset('assets/assets/img/tool/java.png')); ?>" alt="tool">
                            </div>
                            <span>Java</span>
                        </div>
                        <div class="partnership_tool-single">
                            <div class="img">
-                               <img src="{{ asset('assets/assets/img/tool/vue.png') }}" alt="tool">
+                               <img src="<?php echo e(asset('assets/assets/img/tool/vue.png')); ?>" alt="tool">
                            </div>
                            <span>Vue</span>
                        </div>
                        <div class="partnership_tool-single">
                            <div class="img">
-                               <img src="{{ asset('assets/assets/img/tool/angular.png') }}" alt="tool">
+                               <img src="<?php echo e(asset('assets/assets/img/tool/angular.png')); ?>" alt="tool">
                            </div>
                            <span>Angular</span>
                        </div>
                        <div class="partnership_tool-single">
                            <div class="img">
-                               <img src="{{ asset('assets/assets/img/tool/kotlin.png') }}" alt="tool">
+                               <img src="<?php echo e(asset('assets/assets/img/tool/kotlin.png')); ?>" alt="tool">
                            </div>
                            <span>Kotlin</span>
                        </div>
                        <div class="partnership_tool-single">
                            <div class="img">
-                               <img src="{{ asset('assets/assets/img/tool/nest.png') }}" alt="tool">
+                               <img src="<?php echo e(asset('assets/assets/img/tool/nest.png')); ?>" alt="tool">
                            </div>
                            <span>Nest</span>
                        </div>
                        <div class="partnership_tool-single">
                            <div class="img">
-                               <img src="{{ asset('assets/assets/img/tool/swift.png') }}" alt="tool">
+                               <img src="<?php echo e(asset('assets/assets/img/tool/swift.png')); ?>" alt="tool">
                            </div>
                            <span>Swift</span>
                        </div>
                        <div class="partnership_tool-single">
                            <div class="img">
-                               <img src="{{ asset('assets/assets/img/tool/flutter.png') }}" alt="tool">
+                               <img src="<?php echo e(asset('assets/assets/img/tool/flutter.png')); ?>" alt="tool">
                            </div>
                            <span>Flutter</span>
                        </div>
@@ -361,12 +361,12 @@
                            <li><span>Organized sales process</span></li>
                            <li><span>Updates</span></li>
                        </ul>
-                       <img class="arrow_img" src="{{ asset('assets/assets/img/partnership/arrow.png') }}" alt="arrow">
+                       <img class="arrow_img" src="<?php echo e(asset('assets/assets/img/partnership/arrow.png')); ?>" alt="arrow">
                    </div>
                </div>
                 <div class="col-lg-4 reaward_padding">
                    <div class="reaward-single">
-                    <img class="reaward-single__badge" src="{{ asset('assets/assets/img/partnership/table_top.png') }}" alt="single__badge">
+                    <img class="reaward-single__badge" src="<?php echo e(asset('assets/assets/img/partnership/table_top.png')); ?>" alt="single__badge">
                        <h3>Lead <br> Bonus</h3>
                        <p>Veritatis lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi eum, inventore doloribus voluptatem placeat  amet dolorem distinctio laboriosam</p>
                        <ul>
@@ -375,7 +375,7 @@
                            <li><span>Side Income</span></li>
                            <li><span>Other Income</span></li>
                        </ul>
-                        <img class="arrow_img" src="{{ asset('assets/assets/img/partnership/arrow.png') }}" alt="arrow">
+                        <img class="arrow_img" src="<?php echo e(asset('assets/assets/img/partnership/arrow.png')); ?>" alt="arrow">
                    </div>
                </div>
                 <div class="col-lg-4 reaward_padding">
@@ -424,7 +424,7 @@
                <div class="col-xl-6 col-lg-12">
                    <div class="partnership_video-content">
                        <div class="client-video">
-                            <img src="{{ asset('assets/assets/img/insight/v1.jpg') }}" alt="video">
+                            <img src="<?php echo e(asset('assets/assets/img/insight/v1.jpg')); ?>" alt="video">
                             <div class="technology-video">
                                 <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=Z0A7OMkYQf8">
                                     <i class="fas fa-play"></i>
@@ -443,42 +443,42 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                                 <div class="partnership-badage-single">
-                                    <img src="{{ asset('assets/assets/img/patnar/1.png') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/assets/img/patnar/1.png')); ?>" alt="">
                                 </div>
                             </div>
                              <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                                 <div class="partnership-badage-single">
-                                    <img src="{{ asset('assets/assets/img/patnar/2.png') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/assets/img/patnar/2.png')); ?>" alt="">
                                 </div>
                             </div>
                              <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                                 <div class="partnership-badage-single">
-                                    <img src="{{ asset('assets/assets/img/patnar/3.png') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/assets/img/patnar/3.png')); ?>" alt="">
                                 </div>
                             </div>
                              <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                                 <div class="partnership-badage-single">
-                                    <img src="{{ asset('assets/assets/img/patnar/5.png') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/assets/img/patnar/5.png')); ?>" alt="">
                                 </div>
                             </div>
                              <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                                 <div class="partnership-badage-single">
-                                    <img src="{{ asset('assets/assets/img/patnar/4.png') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/assets/img/patnar/4.png')); ?>" alt="">
                                 </div>
                             </div>
                              <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                                 <div class="partnership-badage-single">
-                                    <img src="{{ asset('assets/assets/img/patnar/7.png') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/assets/img/patnar/7.png')); ?>" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                                 <div class="partnership-badage-single">
-                                    <img src="{{ asset('assets/assets/img/patnar/9.png') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/assets/img/patnar/9.png')); ?>" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                                 <div class="partnership-badage-single">
-                                    <img src="{{ asset('assets/assets/img/patnar/13.png') }}" alt="">
+                                    <img src="<?php echo e(asset('assets/assets/img/patnar/13.png')); ?>" alt="">
                                 </div>
                             </div>
                          
@@ -519,12 +519,12 @@
                            <div class="linkdine_info">
                                <span>Find me on</span>
                                <div class="img">
-                                   <img src="{{ asset('assets/assets/img/partnership/linkedin.png') }}" alt="png">
+                                   <img src="<?php echo e(asset('assets/assets/img/partnership/linkedin.png')); ?>" alt="png">
                                </div>
                            </div>
                        </div>
                        <div class="partnership_developer-middle">
-                           <img src="{{ asset('assets/assets/img/partnership/developers.png') }}" alt="dev">
+                           <img src="<?php echo e(asset('assets/assets/img/partnership/developers.png')); ?>" alt="dev">
                        </div>
                         <div class="info_developer info_developer-right">
                            <h4>Joe Bainar</h4>
@@ -532,7 +532,7 @@
                            <div class="linkdine_info">
                                <span>Find me on</span>
                                <div class="img">
-                                   <img src="{{ asset('assets/assets/img/partnership/linkedin.png') }}" alt="png">
+                                   <img src="<?php echo e(asset('assets/assets/img/partnership/linkedin.png')); ?>" alt="png">
                                </div>
                            </div>
                        </div>
@@ -560,4 +560,5 @@
         </div>
    </section>
    <!-- partnership-developer end-->
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\appdev\resources\views/template/aboutus.blade.php ENDPATH**/ ?>

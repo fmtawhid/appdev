@@ -1,10 +1,10 @@
-@extends('layouts.master')
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <!-- page-header start-->
   	<section class="video_page-header insight_page-header2">
   		<div class="in_video">
             <video autoplay muted loop>
-                  <source src="{{ asset('assets/assets/img/insight/header.mp4') }}" type="video/mp4">
+                  <source src="<?php echo e(asset('assets/assets/img/insight/header.mp4')); ?>" type="video/mp4">
             </video>
             <div class="insight_page-content">
 				<div class="insight_page-text">
@@ -92,7 +92,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="insight-blog-single">
                         <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in1.jpg') }}" alt="inb">
+                            <img src="<?php echo e(asset('assets/assets/img/insight/in1.jpg')); ?>" alt="inb">
                             <div class="read_more-now">
                                 <div class="icon"><i class="far fa-comment-alt"></i></div>
                                 <h4><a href="#">more</a></h4>
@@ -114,7 +114,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="insight-blog-single">
                         <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in3.jpg') }}" alt="inb">
+                            <img src="<?php echo e(asset('assets/assets/img/insight/in3.jpg')); ?>" alt="inb">
                             <div class="read_more-now">
                                 <div class="technology-video">
                                     <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=Z0A7OMkYQf8">
@@ -139,7 +139,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="insight-blog-single">
                         <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in6.jpg') }}" alt="inb">
+                            <img src="<?php echo e(asset('assets/assets/img/insight/in6.jpg')); ?>" alt="inb">
                             <div class="read_more-now">
                                 <div class="icon"><i class="far fa-comment-alt"></i></div>
                                 <h4><a href="#">more</a></h4>
@@ -161,7 +161,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="insight-blog-single">
                         <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in4.jpg') }}" alt="inb">
+                            <img src="<?php echo e(asset('assets/assets/img/insight/in4.jpg')); ?>" alt="inb">
                             <div class="read_more-now">
                                 <div class="icon"><i class="far fa-comment-alt"></i></div>
                                 <h4><a href="#">more</a></h4>
@@ -183,7 +183,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="insight-blog-single">
                         <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in7.jpg') }}" alt="inb">
+                            <img src="<?php echo e(asset('assets/assets/img/insight/in7.jpg')); ?>" alt="inb">
                             <div class="read_more-now">
                                 <div class="technology-video">
                                     <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=Z0A7OMkYQf8">
@@ -208,7 +208,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="insight-blog-single">
                         <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in2.jpg') }}" alt="inb">
+                            <img src="<?php echo e(asset('assets/assets/img/insight/in2.jpg')); ?>" alt="inb">
                             <div class="read_more-now">
                                 <div class="icon"><i class="far fa-comment-alt"></i></div>
                                 <h4><a href="#">more</a></h4>
@@ -292,7 +292,7 @@
                                 <div class="tabs_sliders owl-carousel owl-theme">
                                     <div class="tabs_items">
                                         <div class="tabs_image">
-                                            <img src="{{ asset('assets/assets/img/insight/in7.jpg') }}" alt="tabs">
+                                            <img src="<?php echo e(asset('assets/assets/img/insight/in7.jpg')); ?>" alt="tabs">
                                         </div>
                                         <div class="tabs_text">
                                             <div class="tabs_title">
@@ -315,7 +315,7 @@
                                     </div>
                                     <div class="tabs_items">
                                         <div class="tabs_image">
-                                            <img src="{{ asset('assets/assets/img/insight/in.jpg') }}" alt="tabs">
+                                            <img src="<?php echo e(asset('assets/assets/img/insight/in.jpg')); ?>" alt="tabs">
                                         </div>
                                         <div class="tabs_text">
                                             <div class="tabs_title">
@@ -345,7 +345,7 @@
                                 <div class="tabs_sliders owl-carousel owl-theme">
                                     <div class="tabs_items">
                                         <div class="tabs_image">
-                                            <img src="{{ asset('assets/assets/img/insight/tabs/1.jpg') }}" alt="tabs">
+                                            <img src="<?php echo e(asset('assets/assets/img/insight/tabs/1.jpg')); ?>" alt="tabs">
                                         </div>
                                         <div class="tabs_text">
                                             <div class="tabs_title">
@@ -368,7 +368,7 @@
                                     </div>
                                     <div class="tabs_items">
                                         <div class="tabs_image">
-                                            <img src="{{ asset('assets/assets/img/insight/tabs/2.jpg') }}" alt="tabs">
+                                            <img src="<?php echo e(asset('assets/assets/img/insight/tabs/2.jpg')); ?>" alt="tabs">
                                         </div>
                                         <div class="tabs_text">
                                             <div class="tabs_title">
@@ -398,7 +398,7 @@
                                 <div class="tabs_sliders owl-carousel owl-theme">
                                     <div class="tabs_items">
                                         <div class="tabs_image">
-                                            <img src="{{ asset('assets/assets/img/insight/tabs/1.jpg') }}" alt="tabs">
+                                            <img src="<?php echo e(asset('assets/assets/img/insight/tabs/1.jpg')); ?>" alt="tabs">
                                         </div>
                                         <div class="tabs_text">
                                             <div class="tabs_title">
@@ -421,7 +421,7 @@
                                     </div>
                                     <div class="tabs_items">
                                         <div class="tabs_image">
-                                            <img src="{{ asset('assets/assets/img/insight/in.jpg') }}" alt="tabs">
+                                            <img src="<?php echo e(asset('assets/assets/img/insight/in.jpg')); ?>" alt="tabs">
                                         </div>
                                         <div class="tabs_text">
                                             <div class="tabs_title">
@@ -451,7 +451,7 @@
                                 <div class="tabs_sliders owl-carousel owl-theme">
                                     <div class="tabs_items">
                                         <div class="tabs_image">
-                                            <img src="{{ asset('assets/assets/img/insight/in4.jpg') }}" alt="tabs">
+                                            <img src="<?php echo e(asset('assets/assets/img/insight/in4.jpg')); ?>" alt="tabs">
                                         </div>
                                         <div class="tabs_text">
                                             <div class="tabs_title">
@@ -474,7 +474,7 @@
                                     </div>
                                     <div class="tabs_items">
                                         <div class="tabs_image">
-                                            <img src="{{ asset('assets/assets/img/insight/in2.jpg') }}" alt="tabs">
+                                            <img src="<?php echo e(asset('assets/assets/img/insight/in2.jpg')); ?>" alt="tabs">
                                         </div>
                                         <div class="tabs_text">
                                             <div class="tabs_title">
@@ -504,7 +504,7 @@
                                 <div class="tabs_sliders owl-carousel owl-theme">
                                     <div class="tabs_items">
                                         <div class="tabs_image">
-                                            <img src="{{ asset('assets/assets/img/insight/tabs/1.jpg') }}" alt="tabs">
+                                            <img src="<?php echo e(asset('assets/assets/img/insight/tabs/1.jpg')); ?>" alt="tabs">
                                         </div>
                                         <div class="tabs_text">
                                             <div class="tabs_title">
@@ -527,7 +527,7 @@
                                     </div>
                                     <div class="tabs_items">
                                         <div class="tabs_image">
-                                            <img src="{{ asset('assets/assets/img/insight/tabs/2.jpg') }}" alt="tabs">
+                                            <img src="<?php echo e(asset('assets/assets/img/insight/tabs/2.jpg')); ?>" alt="tabs">
                                         </div>
                                         <div class="tabs_text">
                                             <div class="tabs_title">
@@ -593,7 +593,7 @@
                           <div class="image-before hidden-sm hidden-xs">
                             <h2>I love <span>to</span><span>Made</span></h2>
                           </div>
-                          <div class="image-content"><img src="{{ asset('assets/assets/img/membar/ceo.png') }}" alt="chef photo">
+                          <div class="image-content"><img src="<?php echo e(asset('assets/assets/img/membar/ceo.png')); ?>" alt="chef photo">
                             <h3 class="author-name">Nurulhuda Liton</h3>
                             <h5 class="author-designation">For Founders & CEOs</h5>
                           </div>
@@ -605,7 +605,7 @@
                           <div class="image-before hidden-sm hidden-xs">
                             <h2>I love <span>to</span><span>Cook</span></h2>
                           </div>
-                          <div class="image-content"><img src="{{ asset('assets/assets/img/membar/md.png') }}" alt="chef photo">
+                          <div class="image-content"><img src="<?php echo e(asset('assets/assets/img/membar/md.png')); ?>" alt="chef photo">
                             <h3 class="author-name">Rakib Smith</h3>
                             <h5 class="author-designation">Head of Technology</h5>
                           </div>
@@ -617,7 +617,7 @@
                           <div class="image-before hidden-sm hidden-xs">
                             <h2>I love <span>to</span><span>Made</span></h2>
                           </div>
-                          <div class="image-content"><img src="{{ asset('assets/assets/img/membar/founder.png') }}" alt="chef photo">
+                          <div class="image-content"><img src="<?php echo e(asset('assets/assets/img/membar/founder.png')); ?>" alt="chef photo">
                             <h3 class="author-name">Zenifer Smith</h3>
                             <h5 class="author-designation">Head of Business Development</h5>
                           </div>
@@ -630,9 +630,9 @@
                 </div>
                 <div class="membar-nav">
                     <ul class="experts-chefs-nav">
-                        <li class="active"><a href="#chef-1" data-toggle="tab" class="nav-image" aria-expanded="true"><img src="{{ asset('assets/assets/img/membar/ceo.png') }}" alt="chef photo"></a></li>
-                        <li class=""><a href="#chef-2" data-toggle="tab" class="nav-image" aria-expanded="false"><img src="{{ asset('assets/assets/img/membar/md.png') }}" alt="chef photo"></a></li>
-                        <li class=""><a href="#chef-3" data-toggle="tab" class="nav-image" aria-expanded="false"><img src="{{ asset('assets/assets/img/membar/founder.png') }}" alt="chef photo"></a></li>
+                        <li class="active"><a href="#chef-1" data-toggle="tab" class="nav-image" aria-expanded="true"><img src="<?php echo e(asset('assets/assets/img/membar/ceo.png')); ?>" alt="chef photo"></a></li>
+                        <li class=""><a href="#chef-2" data-toggle="tab" class="nav-image" aria-expanded="false"><img src="<?php echo e(asset('assets/assets/img/membar/md.png')); ?>" alt="chef photo"></a></li>
+                        <li class=""><a href="#chef-3" data-toggle="tab" class="nav-image" aria-expanded="false"><img src="<?php echo e(asset('assets/assets/img/membar/founder.png')); ?>" alt="chef photo"></a></li>
                     </ul>
                 </div>
             </div>
@@ -656,4 +656,5 @@
             </div>
         </div>
     </section>
-@endsection 
+<?php $__env->stopSection(); ?> 
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\appdev\resources\views/template/products.blade.php ENDPATH**/ ?>

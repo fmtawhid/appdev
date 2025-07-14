@@ -1,5 +1,5 @@
-@extends('layouts.master')
-@section('content')
+
+<?php $__env->startSection('content'); ?>
    	 <!-- page-header start-->
    	<section class="page-header header-service" style="background-image: url('assets/img/service/page-header.jpg');">
    		<div class="container">
@@ -113,7 +113,7 @@
    				</div>
                 <div class="col-lg-5 col-md-12">
                     <div class="service-box-right">
-                        <img src="{{ asset('assets/assets/img/service/sb-box.jpg') }}" alt="img">
+                        <img src="<?php echo e(asset('assets/assets/img/service/sb-box.jpg')); ?>" alt="img">
                     </div>
                 </div>
    			</div>
@@ -179,7 +179,7 @@
                         <div class="sb_content tab-pane fade in active show" id="bookTab1">
                             <div class="tabs-box">
                                 <div class="client-video solution_video">
-                                    <img src="{{ asset('assets/assets/img/service/1.jpg') }}" alt="video">
+                                    <img src="<?php echo e(asset('assets/assets/img/service/1.jpg')); ?>" alt="video">
                                     <div class="technology-video">
                                         <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=Z0A7OMkYQf8">
                                             <i class="fas fa-play"></i>
@@ -194,7 +194,7 @@
                         <div class="sb_content tab-pane fade" id="bookTab2">
                             <div class="tabs-box">
                                 <div class="client-video solution_video">
-                                    <img src="{{ asset('assets/assets/img/client/video.jpg') }}" alt="video">
+                                    <img src="<?php echo e(asset('assets/assets/img/client/video.jpg')); ?>" alt="video">
                                     <div class="technology-video">
                                         <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=Z0A7OMkYQf8">
                                             <i class="fas fa-play"></i>
@@ -209,7 +209,7 @@
                         <div class="sb_content tab-pane fade" id="bookTab3">
                             <div class="tabs-box">
                                 <div class="client-video solution_video">
-                                    <img src="{{ asset('assets/assets/img/insight/in1-2.jpg') }}" alt="video">
+                                    <img src="<?php echo e(asset('assets/assets/img/insight/in1-2.jpg')); ?>" alt="video">
                                     <div class="technology-video">
                                         <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=Z0A7OMkYQf8">
                                             <i class="fas fa-play"></i>
@@ -355,105 +355,105 @@
             <div class="row justify-content-center">
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/java.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/java.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">Java</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/react.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/react.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">React js</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/vue.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/vue.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">Vue js</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/1.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/1.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">paython</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/flutter.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/flutter.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">flutter</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/df.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/df.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">Django</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/jenkins.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/jenkins.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">jenkins</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/swift.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/swift.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">swift</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/nest.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/nest.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">nest</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/angular.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/angular.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">angular</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/Docker.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/Docker.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">Docker</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/machine.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/machine.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">machine learing</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/node.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/node.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">Node js</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/PostgreSQL.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/PostgreSQL.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">PostgreSQL</a>
                 </div>
                 <div class="service_tool-single">
                     <div class="service_tool-icon">
-                        <img src="{{ asset('assets/assets/img/tool/git.png') }}" alt="tool">
+                        <img src="<?php echo e(asset('assets/assets/img/tool/git.png')); ?>" alt="tool">
                     </div>
                     <div class="service_tool-line"></div>
                     <a class="service_tool-link" href="development.html">git</a>
@@ -482,4 +482,5 @@
         </div>
     </section>
     <!-- estimate area end-->
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\appdev\resources\views/template/service.blade.php ENDPATH**/ ?>
