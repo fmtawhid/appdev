@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ExpenseHeadController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\HomeController;
 
 use App\Http\Controllers\Admin\ExpenseController;
 use App\Http\Controllers\Admin\PaymentController;
@@ -14,6 +15,10 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\BranceController;
 use App\Http\Controllers\Admin\AccountController;
+
+use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\TeamController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -145,6 +150,41 @@ Route::prefix('panel')->middleware(['auth', 'checkRole:admin'])->group(function 
     Route::middleware(['permission:account_edit'])->get('/accounts/{account}/edit', [AccountController::class, 'edit'])->name('accounts.edit');
     Route::middleware(['permission:account_edit'])->put('/accounts/{account}/update', [AccountController::class, 'update'])->name('accounts.update');
     Route::middleware(['permission:account_delete'])->delete('/accounts/{account}/destroy', [AccountController::class, 'destroy'])->name('accounts.destroy');
+
+
+
+    // Brand Routes
+
+    Route::middleware(['permission:brand_view'])->get('/brands', [\App\Http\Controllers\Admin\BrandController::class, 'index'])->name('brands.index');
+    Route::middleware(['permission:brand_add'])->get('/brands/create', [\App\Http\Controllers\Admin\BrandController::class, 'create'])->name('brands.create');
+    Route::middleware(['permission:brand_add'])->post('/brands', [\App\Http\Controllers\Admin\BrandController::class, 'store'])->name('brands.store');
+    Route::middleware(['permission:brand_edit'])->get('/brands/{brand}/edit', [\App\Http\Controllers\Admin\BrandController::class, 'edit'])->name('brands.edit');
+    Route::middleware(['permission:brand_edit'])->put('/brands/{brand}', [\App\Http\Controllers\Admin\BrandController::class, 'update'])->name('brands.update');
+    Route::middleware(['permission:brand_delete'])->delete('/brands/{brand}', [\App\Http\Controllers\Admin\BrandController::class, 'destroy'])->name('brands.destroy');
+
+    
+    Route::middleware(['permission:achievement_view'])->get('/achievements', [\App\Http\Controllers\Admin\AchievementController::class, 'index'])->name('achievements.index');
+    Route::middleware(['permission:achievement_add'])->get('/achievements/create', [\App\Http\Controllers\Admin\AchievementController::class, 'create'])->name('achievements.create');
+    Route::middleware(['permission:achievement_add'])->post('/achievements', [\App\Http\Controllers\Admin\AchievementController::class, 'store'])->name('achievements.store');
+    Route::middleware(['permission:achievement_edit'])->get('/achievements/{achievement}/edit', [\App\Http\Controllers\Admin\AchievementController::class, 'edit'])->name('achievements.edit');
+    Route::middleware(['permission:achievement_edit'])->put('/achievements/{achievement}', [\App\Http\Controllers\Admin\AchievementController::class, 'update'])->name('achievements.update');
+    Route::middleware(['permission:achievement_delete'])->delete('/achievements/{achievement}', [\App\Http\Controllers\Admin\AchievementController::class, 'destroy'])->name('achievements.destroy');
+
+
+
+    Route::middleware(['permission:faq_view'])->get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
+    Route::middleware(['permission:faq_add'])->get('/faqs/create', [FaqController::class, 'create'])->name('faqs.create');
+    Route::middleware(['permission:faq_add'])->post('/faqs', [FaqController::class, 'store'])->name('faqs.store');
+    Route::middleware(['permission:faq_edit'])->get('/faqs/{faq}/edit', [FaqController::class, 'edit'])->name('faqs.edit');
+    Route::middleware(['permission:faq_edit'])->put('/faqs/{faq}', [FaqController::class, 'update'])->name('faqs.update');
+    Route::middleware(['permission:faq_delete'])->delete('/faqs/{faq}', [FaqController::class, 'destroy'])->name('faqs.destroy');
+
+    Route::middleware(['permission:team_view'])->get('/teams', [TeamController::class, 'index'])->name('teams.index');
+    Route::middleware(['permission:team_add'])->get('/teams/create', [TeamController::class, 'create'])->name('teams.create');
+    Route::middleware(['permission:team_add'])->post('/teams', [TeamController::class, 'store'])->name('teams.store');
+    Route::middleware(['permission:team_edit'])->get('/teams/{team}/edit', [TeamController::class, 'edit'])->name('teams.edit');
+    Route::middleware(['permission:team_edit'])->put('/teams/{team}', [TeamController::class, 'update'])->name('teams.update');
+    Route::middleware(['permission:team_delete'])->delete('/teams/{team}', [TeamController::class, 'destroy'])->name('teams.destroy');
 });
 
 

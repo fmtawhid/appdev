@@ -362,7 +362,7 @@
                     <div class="logo-topbar">
                         <!-- Logo light -->
                         <a href="{{ url('/panel/dashboard') }}" class="logo-light">
-                            <h2 class="heading-dark">E-ACCOUNT</h2>
+                            <h2 class="heading-dark">App Devs</h2>
                             {{-- <span class="logo-lg">
                                 <img src="{{ asset(" assets/setting/$setting->logo") }}" alt="logo">
                             </span>
@@ -373,7 +373,7 @@
 
                         <!-- Logo Dark -->
                         <a href="{{ url('/panel/dashboard') }}" class="logo-dark">
-                            <h2 class="heading-light">E_ACCOUNT</h2>
+                            <h2 class="heading-light">App Devs</h2>
                             {{-- <span class="logo-lg">
                                 <img src="{{ asset(" assets/setting/$setting->logo") }}" alt="dark logo">
                             </span>
@@ -480,7 +480,7 @@
             <a href="{{ url('/panel/dashboard') }}" class="logo logo-light">
                 <h2 class="heading-dark">
                     
-                    E-ACCOUNT</h2>
+                    App Devs</h2>
                 {{-- <span class="logo-lg">
                     <img src="{{ asset(" assets/setting/$setting->logo") }}" alt="logo">
                 </span>
@@ -491,7 +491,7 @@
 
             <!-- Brand Logo Dark -->
             <a href="{{ url('/panel/dashboard') }}" class="logo logo-dark">
-                <h2 class="heading-light">E-ACCOUNT</h2>
+                <h2 class="heading-light">App Devs</h2>
                 {{-- <span class="logo-lg">
                     <img src="{{ asset(" assets/setting/$setting->logo") }}" alt="dark logo">
                 </span>
@@ -573,6 +573,50 @@
                         </a>
                     </li>
                     @endcanany
+
+                
+                   
+
+                    {{-- Brands --}}
+                    @canany(['brand_view', 'brand_add', 'brand_edit', 'brand_delete'])
+                    <li class="side-nav-item">
+                        <a href="{{ route('brands.index') }}" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-shopping-bag-line"></i>
+                            <span>Brands</span>
+                        </a>
+                    </li>
+                    @endcanany
+
+                    {{-- Achievements --}}
+                    @canany(['achievement_view', 'achievement_add', 'achievement_edit', 'achievement_delete'])
+                    <li class="side-nav-item">
+                        <a href="{{ route('achievements.index') }}" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-trophy-line"></i>
+                            <span>Achievements</span>
+                        </a>
+                    </li>
+                    @endcanany
+
+                    {{-- FAQ --}}
+                    @canany(['faq_view', 'faq_add', 'faq_edit', 'faq_delete'])
+                    <li class="side-nav-item">
+                        <a href="{{ route('faqs.index') }}" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-question-answer-line"></i>
+                            <span>FAQ</span>
+                        </a>
+                    </li>
+                    @endcanany
+
+                    {{-- Team --}}
+                    @canany(['team_view', 'team_add', 'team_edit', 'team_delete'])
+                    <li class="side-nav-item">
+                        <a href="{{ route('teams.index') }}" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-group-line"></i>
+                            <span>Team</span>
+                        </a>
+                    </li>
+                    @endcanany
+
 
 
                     <!-- Expenses Section -->

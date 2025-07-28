@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>E-ACCOUNT | Login</title>
+    <title>App Devs | Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap 5 -->
@@ -127,7 +127,7 @@
 
         <!-- Right Side Form -->
         <div class="login-form">
-            <h4>E-ACCOUNT Login</h4>
+            <h4>App Devs Login</h4>
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
