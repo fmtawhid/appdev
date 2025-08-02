@@ -90,20 +90,7 @@
                         </div>
                     </div>
 
-                    <!-- <h5 class="mb-1 mt-0 fw-normal">Rafusoft Mirpur</h5>
-                    <div class="progress-w-percent">
-                        <span class="progress-value fw-bold">72k</span>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar" role="progressbar" style="width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                    </div>
-
-                    <h5 class="mb-1 mt-0 fw-normal">Rafusoft Dinajpur</h5>
-                    <div class="progress-w-percent">
-                        <span class="progress-value fw-bold">39k</span>
-                    <div class="progress progress-sm">
-                        <div class="progress-bar" role="progressbar" style="width: 39%;" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div> -->
+                    
                 </div>
 
             </div> <!-- end card-body-->
