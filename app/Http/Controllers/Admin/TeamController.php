@@ -14,7 +14,7 @@ class TeamController extends Controller
         foreach (self::middlewareList() as $middleware => $methods) {
             $this->middleware($middleware)->only($methods);
         }
-    }
+    } 
      public static function middlewareList(): array
     {
         return [

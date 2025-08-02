@@ -18,7 +18,8 @@ use App\Http\Controllers\Admin\AccountController;
 
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\TeamController;
-
+use App\Http\Controllers\Admin\ProgrammingLanguageController;
+use App\Http\Controllers\Admin\TechStackController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -185,6 +186,27 @@ Route::prefix('panel')->middleware(['auth', 'checkRole:admin'])->group(function 
     Route::middleware(['permission:team_edit'])->get('/teams/{team}/edit', [TeamController::class, 'edit'])->name('teams.edit');
     Route::middleware(['permission:team_edit'])->put('/teams/{team}', [TeamController::class, 'update'])->name('teams.update');
     Route::middleware(['permission:team_delete'])->delete('/teams/{team}', [TeamController::class, 'destroy'])->name('teams.destroy');
+
+    Route::middleware(['permission:language_view'])->get('/languages', [ProgrammingLanguageController::class, 'index'])->name('languages.index');
+    Route::middleware(['permission:language_add'])->get('/languages/create', [ProgrammingLanguageController::class, 'create'])->name('languages.create');
+    Route::middleware(['permission:language_add'])->post('/languages', [ProgrammingLanguageController::class, 'store'])->name('languages.store');
+    Route::middleware(['permission:language_edit'])->get('/languages/{language}/edit', [ProgrammingLanguageController::class, 'edit'])->name('languages.edit');
+    Route::middleware(['permission:language_edit'])->put('/languages/{language}', [ProgrammingLanguageController::class, 'update'])->name('languages.update');
+    Route::middleware(['permission:language_delete'])->delete('/languages/{language}', [ProgrammingLanguageController::class, 'destroy'])->name('languages.destroy');
+    
+    Route::get('/programming-languages/search', [ProgrammingLanguageController::class, 'search'])->name('programming-languages.search');
+
+
+    Route::middleware(['permission:techstack_view'])->get('/techstacks', [TechStackController::class, 'index'])->name('techstacks.index');
+    Route::middleware(['permission:techstack_add'])->get('/techstacks/create', [TechStackController::class, 'create'])->name('techstacks.create');
+    Route::middleware(['permission:techstack_add'])->post('/techstacks', [TechStackController::class, 'store'])->name('techstacks.store');
+    Route::middleware(['permission:techstack_edit'])->get('/techstacks/{techstack}/edit', [TechStackController::class, 'edit'])->name('techstacks.edit');
+    Route::middleware(['permission:techstack_edit'])->put('/techstacks/{techstack}', [TechStackController::class, 'update'])->name('techstacks.update');
+    Route::middleware(['permission:techstack_delete'])->delete('/techstacks/{techstack}', [TechStackController::class, 'destroy'])->name('techstacks.destroy');
+    
+    Route::get('/programming-languages/search', [TechStackController::class, 'search'])
+        ->name('programming-languages.search');
+
 });
 
 
@@ -198,3 +220,4 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/about-us', 'about')->name('about');
     Route::get('/contact', 'contact')->name('contact');
 });
+
