@@ -617,6 +617,47 @@
                     </li>
                     @endcanany
 
+                    {{-- Client Review --}}
+                    @canany(['review_view', 'review_add', 'review_edit', 'review_delete'])
+                    <li class="side-nav-item">
+                        <a href="{{ route('client-reviews.index') }}" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-star-line"></i>
+                            <span>Client Reviews</span>
+                        </a>
+                    </li>
+                    @endcanany
+
+                    {{-- Job Opening --}}
+                    @canany(['job_view', 'job_add', 'job_edit', 'job_delete'])
+                    <li class="side-nav-item">
+                        <a href="{{ route('job-openings.index') }}" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-briefcase-line"></i>
+                            <span>Job Openings</span>
+                        </a>
+                    </li>
+                    @endcanany
+
+                    {{-- Programming Language --}}
+                    @canany(['programming_language_view', 'programming_language_add', 'programming_language_edit', 'programming_language_delete'])
+                    <li class="side-nav-item">
+                        <a href="{{ route('programming-languages.index') }}" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-code-line"></i>
+                            <span>Programming Languages</span>
+                        </a>
+                    </li>
+                    @endcanany
+
+                    {{-- Dedicated Solutions --}}
+                    @canany(['dedicated_view', 'dedicated_add', 'dedicated_edit', 'dedicated_delete'])
+                    <li class="side-nav-item">
+                        <a href="{{ route('dedicated-solutions.index') }}" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-stack-line"></i>
+                            <span>Dedicated Solutions</span>
+                        </a>
+                    </li>
+                    @endcanany
+
+
 
 
                     <!-- Expenses Section -->

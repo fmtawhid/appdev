@@ -592,6 +592,47 @@
                     </li>
                     <?php endif; ?>
 
+                    
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['review_view', 'review_add', 'review_edit', 'review_delete'])): ?>
+                    <li class="side-nav-item">
+                        <a href="<?php echo e(route('client-reviews.index')); ?>" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-star-line"></i>
+                            <span>Client Reviews</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
+                    
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['job_view', 'job_add', 'job_edit', 'job_delete'])): ?>
+                    <li class="side-nav-item">
+                        <a href="<?php echo e(route('job-openings.index')); ?>" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-briefcase-line"></i>
+                            <span>Job Openings</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
+                    
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['programming_language_view', 'programming_language_add', 'programming_language_edit', 'programming_language_delete'])): ?>
+                    <li class="side-nav-item">
+                        <a href="<?php echo e(route('programming-languages.index')); ?>" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-code-line"></i>
+                            <span>Programming Languages</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
+                    
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['dedicated_view', 'dedicated_add', 'dedicated_edit', 'dedicated_delete'])): ?>
+                    <li class="side-nav-item">
+                        <a href="<?php echo e(route('dedicated-solutions.index')); ?>" class="side-nav-link d-flex align-items-center w-100 h-100">
+                            <i class="ri-stack-line"></i>
+                            <span>Dedicated Solutions</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
+
 
 
                     <!-- Expenses Section -->

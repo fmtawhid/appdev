@@ -19,7 +19,11 @@ use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\ProgrammingLanguageController;
-use App\Http\Controllers\Admin\TechStackController;
+use App\Http\Controllers\Admin\ClientReviewController;
+use App\Http\Controllers\Admin\JobOpeningController;
+use App\Http\Controllers\Admin\DedicatedSolutionController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -193,20 +197,32 @@ Route::prefix('panel')->middleware(['auth', 'checkRole:admin'])->group(function 
     Route::middleware(['permission:language_edit'])->get('/languages/{language}/edit', [ProgrammingLanguageController::class, 'edit'])->name('languages.edit');
     Route::middleware(['permission:language_edit'])->put('/languages/{language}', [ProgrammingLanguageController::class, 'update'])->name('languages.update');
     Route::middleware(['permission:language_delete'])->delete('/languages/{language}', [ProgrammingLanguageController::class, 'destroy'])->name('languages.destroy');
+
+    // Client Review Routes
+    Route::middleware(['permission:review_view|review_add'])->get('/client-reviews', [ClientReviewController::class, 'index'])->name('client-reviews.index');
+    Route::middleware(['permission:review_add'])->get('/client-reviews/create', [ClientReviewController::class, 'create'])->name('client-reviews.create');
+    Route::middleware(['permission:review_add'])->post('/client-reviews/store', [ClientReviewController::class, 'store'])->name('client-reviews.store');
+    Route::middleware(['permission:review_edit'])->get('/client-reviews/{clientReview}/edit', [ClientReviewController::class, 'edit'])->name('client-reviews.edit');
+    Route::middleware(['permission:review_edit'])->put('/client-reviews/{clientReview}/update', [ClientReviewController::class, 'update'])->name('client-reviews.update');
+    Route::middleware(['permission:review_delete'])->delete('/client-reviews/{clientReview}/destroy', [ClientReviewController::class, 'destroy'])->name('client-reviews.destroy');
+
+
+    Route::middleware(['permission:job_view|job_add'])->get('/job-openings', [JobOpeningController::class, 'index'])->name('job-openings.index');
+    Route::middleware(['permission:job_add'])->get('/job-openings/create', [JobOpeningController::class, 'create'])->name('job-openings.create');
+    Route::middleware(['permission:job_add'])->post('/job-openings/store', [JobOpeningController::class, 'store'])->name('job-openings.store');
+    Route::middleware(['permission:job_edit'])->get('/job-openings/{jobOpening}/edit', [JobOpeningController::class, 'edit'])->name('job-openings.edit');
+    Route::middleware(['permission:job_edit'])->put('/job-openings/{jobOpening}/update', [JobOpeningController::class, 'update'])->name('job-openings.update');
+    Route::middleware(['permission:job_delete'])->delete('/job-openings/{jobOpening}/destroy', [JobOpeningController::class, 'destroy'])->name('job-openings.destroy');
+
+
     
-    Route::get('/programming-languages/search', [ProgrammingLanguageController::class, 'search'])->name('programming-languages.search');
 
-
-    Route::middleware(['permission:techstack_view'])->get('/techstacks', [TechStackController::class, 'index'])->name('techstacks.index');
-    Route::middleware(['permission:techstack_add'])->get('/techstacks/create', [TechStackController::class, 'create'])->name('techstacks.create');
-    Route::middleware(['permission:techstack_add'])->post('/techstacks', [TechStackController::class, 'store'])->name('techstacks.store');
-    Route::middleware(['permission:techstack_edit'])->get('/techstacks/{techstack}/edit', [TechStackController::class, 'edit'])->name('techstacks.edit');
-    Route::middleware(['permission:techstack_edit'])->put('/techstacks/{techstack}', [TechStackController::class, 'update'])->name('techstacks.update');
-    Route::middleware(['permission:techstack_delete'])->delete('/techstacks/{techstack}', [TechStackController::class, 'destroy'])->name('techstacks.destroy');
-    
-    Route::get('/programming-languages/search', [TechStackController::class, 'search'])
-        ->name('programming-languages.search');
-
+    Route::middleware(['permission:dedicated_view|dedicated_add'])->get('/dedicated-solutions', [DedicatedSolutionController::class, 'index'])->name('dedicated-solutions.index');
+    Route::middleware(['permission:dedicated_add'])->get('/dedicated-solutions/create', [DedicatedSolutionController::class, 'create'])->name('dedicated-solutions.create');
+    Route::middleware(['permission:dedicated_add'])->post('/dedicated-solutions/store', [DedicatedSolutionController::class, 'store'])->name('dedicated-solutions.store');
+    Route::middleware(['permission:dedicated_edit'])->get('/dedicated-solutions/{dedicatedSolution}/edit', [DedicatedSolutionController::class, 'edit'])->name('dedicated-solutions.edit');
+    Route::middleware(['permission:dedicated_edit'])->put('/dedicated-solutions/{dedicatedSolution}/update', [DedicatedSolutionController::class, 'update'])->name('dedicated-solutions.update');
+    Route::middleware(['permission:dedicated_delete'])->delete('/dedicated-solutions/{dedicatedSolution}/destroy', [DedicatedSolutionController::class, 'destroy'])->name('dedicated-solutions.destroy');
 });
 
 
