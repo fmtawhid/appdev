@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt-4">
-    <h3>Add New Language</h3>
+    <h3>Add New Category</h3>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -20,13 +20,8 @@
 
     <div class="card mt-3">
         <div class="card-body">
-            <form action="{{ route('languages.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('categories.store') }}" method="POST">
                 @csrf
-
-                <div class="mb-3">
-                    <label class="form-label">Stack <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="stack" value="{{ old('stack') }}" required>
-                </div>
 
                 <div class="mb-3">
                     <label class="form-label">Name <span class="text-danger">*</span></label>
@@ -34,17 +29,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Icon</label>
-                    <input type="file" class="form-control" name="icon" accept="image/*">
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Description</label>
-                    <textarea class="form-control" name="description" rows="3">{{ old('description') }}</textarea>
+                    <label class="form-label">Note</label>
+                    <textarea class="form-control" name="note" rows="3">{{ old('note') }}</textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Create</button>
-                <a href="{{ route('languages.index') }}" class="btn btn-secondary">Back to List</a>
+                <a href="{{ route('categories.index') }}" class="btn btn-secondary">Back to List</a>
             </form>
         </div>
     </div>

@@ -616,6 +616,34 @@
                         </a>
                     </li>
                     @endcanany
+                    @canany(['language_view', 'language_add', 'language_edit', 'language_delete'])
+                        <li class="side-nav-item">
+                            <a href="{{ route('languages.index') }}" class="side-nav-link d-flex align-items-center w-100 h-100">
+                                <i class="ri-code-line"></i>
+                                <span>Languages</span>
+                            </a>
+                        </li>
+                    @endcanany
+
+                    @canany(['category_view', 'category_add', 'category_edit', 'category_delete'])
+                        <li class="side-nav-item">
+                            <a href="{{ route('categories.index') }}" class="side-nav-link d-flex align-items-center w-100 h-100">
+                                <i class="ri-folder-2-line"></i>
+                                <span>Categories</span>
+                            </a>
+                        </li>
+                    @endcanany
+                    @canany(['product_view', 'product_add', 'product_edit', 'product_delete'])
+                        <li class="side-nav-item">
+                            <a href="{{ route('products.index') }}" class="side-nav-link d-flex align-items-center w-100 h-100">
+                                <i class="ri-product-hunt-line"></i>
+                                <span>Products</span>
+                            </a>
+                        </li>
+                    @endcanany
+
+
+                    
 
                     {{-- Client Review --}}
                     @canany(['review_view', 'review_add', 'review_edit', 'review_delete'])
@@ -1263,7 +1291,6 @@
 });
 
 </script>
-
 
     @yield('scripts')
 

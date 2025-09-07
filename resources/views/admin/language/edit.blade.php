@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt-4">
-    <h3>Edit Programming Language</h3>
+    <h3>Edit Language</h3>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -20,9 +20,14 @@
 
     <div class="card mt-3">
         <div class="card-body">
-            <form action="{{ route('languages.update', $language) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('languages.update', $language->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
+
+                <div class="mb-3">
+                    <label class="form-label">Stack <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" name="stack" value="{{ old('stack', $language->stack) }}" required>
+                </div>
 
                 <div class="mb-3">
                     <label class="form-label">Name <span class="text-danger">*</span></label>
@@ -30,9 +35,9 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Icon (optional)</label><br>
-                    @if ($language->icon)
-                        <img src="{{ asset($language->icon) }}" width="60" class="mb-2"><br>
+                    <label class="form-label">Current Icon</label><br>
+                    @if($language->icon)
+                        <img src="{{ asset($language->icon) }}" width="60" class="mb-2">
                     @endif
                     <input type="file" class="form-control" name="icon" accept="image/*">
                 </div>

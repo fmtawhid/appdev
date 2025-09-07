@@ -5,10 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use function view;
  
+use App\Models\Achievement;
+use App\Models\Brand;
+
 
 class PageController extends Controller
 {
     // Show Service Page
+
+    public function homePage()
+    {
+        $achievements = Achievement::all();
+        $brands = Brand::all();
+
+        return view('template.index', compact('achievements', 'brands'));
+    }
     public function services()
     {
         return view('template.service');

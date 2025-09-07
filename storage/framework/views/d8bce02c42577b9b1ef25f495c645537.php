@@ -1,5 +1,5 @@
-@extends('layouts.master')
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <!-- main-page -->
     <div class="main-page">
     <!-- start-hero-area -->
@@ -18,13 +18,13 @@
                 <div class="slider-main">
                     <div class="hero-slider owl-carousel owl-theme" >
                         <div class="hero-single titlt" data-tilt data-tilt-max="10">
-                            <img src="{{ asset('assets/assets/img/banner/1.png') }}" alt="hero1">
+                            <img src="<?php echo e(asset('assets/assets/img/banner/1.png')); ?>" alt="hero1">
                         </div>
                         <div class="hero-single titlt" data-tilt data-tilt-max="20">
-                            <img src="{{ asset('assets/assets/img/banner/2.png') }}" alt="hero1">
+                            <img src="<?php echo e(asset('assets/assets/img/banner/2.png')); ?>" alt="hero1">
                         </div>
                          <div class="hero-single titlt" data-tilt data-tilt-max="20">
-                            <img src="{{ asset('assets/assets/img/banner/3.png') }}" alt="hero1">
+                            <img src="<?php echo e(asset('assets/assets/img/banner/3.png')); ?>" alt="hero1">
                         </div>
                     </div>
                    <span class="hero__text_more">pull the magnet</span>
@@ -50,7 +50,7 @@
                             <a href="service_detail.html" class="home-services__item-link">
                                 
                                     <figure class="home-services__item-figure">
-                                        <img src="{{ asset('assets/assets/img/service/2.png') }}" alt="sr" class="home-services__item-image">
+                                        <img src="<?php echo e(asset('assets/assets/img/service/2.png')); ?>" alt="sr" class="home-services__item-image">
                                     </figure>
                                 
                                 <div class="home-services__item-name">
@@ -62,7 +62,7 @@
                         <div class="home-services__item">
                             <a href="service_detail.html" class="home-services__item-link">
                                 <figure class="home-services__item-figure">
-                                    <img src="{{ asset('assets/assets/img/service/4.png') }}" alt="sr" class="home-services__item-image">
+                                    <img src="<?php echo e(asset('assets/assets/img/service/4.png')); ?>" alt="sr" class="home-services__item-image">
                                 </figure>
                                 <div class="home-services__item-name">
                                     <span class="home-services__item-name-wrapper">mobile app <br> development</span>
@@ -73,7 +73,7 @@
                         <div class="home-services__item">
                             <a href="product_design.html" class="home-services__item-link">
                                 <figure class="home-services__item-figure">
-                                    <img src="{{ asset('assets/assets/img/service/3.png') }}" alt="sr" class="home-services__item-image">
+                                    <img src="<?php echo e(asset('assets/assets/img/service/3.png')); ?>" alt="sr" class="home-services__item-image">
                                 </figure>
                                 <div class="home-services__item-name">
                                     <span class="home-services__item-name-wrapper">product <br> design</span>
@@ -84,7 +84,7 @@
                         <div class="home-services__item">
                             <a href="consulting.html" class="home-services__item-link">
                                 <figure class="home-services__item-figure">
-                                    <img src="{{ asset('assets/assets/img/service/1.png') }}" alt="sr" class="home-services__item-image">
+                                    <img src="<?php echo e(asset('assets/assets/img/service/1.png')); ?>" alt="sr" class="home-services__item-image">
                                 </figure>
                                 <div class="home-services__item-name">
                                     <span class="home-services__item-name-wrapper">software <br> development <br> consulting</span>
@@ -169,7 +169,7 @@
                     <!-- single_slider -->
                     <div class="solution_slider tab-pane fade active show" id="nav-dna" role="tabpanel" aria-labelledby="nav-dna-tab">
                         <div class="solution_slide_image">
-                            <img src="{{ asset('assets/assets/img/solution/3.jpg') }}" alt="solution">
+                            <img src="<?php echo e(asset('assets/assets/img/solution/3.jpg')); ?>" alt="solution">
                              <div class="overlay-video">
                             <div class="text">
                                 <div class="technology-video">
@@ -189,7 +189,7 @@
                     <!-- single_slider -->
                     <div class="solution_slider tab-pane fade" id="nav-modiernization" role="tabpanel" aria-labelledby="nav-modiernization-tab">
                         <div class="solution_slide_image">
-                            <img src="{{ asset('assets/assets/img/solution/2.jpg') }}" alt="solution">
+                            <img src="<?php echo e(asset('assets/assets/img/solution/2.jpg')); ?>" alt="solution">
                              <div class="overlay-video">
                             <div class="text">
                                 <div class="technology-video">
@@ -209,7 +209,7 @@
                     <!-- single_slider -->
                     <div class="solution_slider tab-pane fade" id="nav-machine" role="tabpanel" aria-labelledby="nav-machine-tab">
                         <div class="solution_slide_image">
-                            <img src="{{ asset('assets/assets/img/solution/1.jpg') }}" alt="solution">
+                            <img src="<?php echo e(asset('assets/assets/img/solution/1.jpg')); ?>" alt="solution">
                              <div class="overlay-video">
                             <div class="text">
                                 <div class="technology-video">
@@ -245,7 +245,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="client-video">
-                        <img src="{{ asset('assets/assets/img/client/video.jpg') }}" alt="video">
+                        <img src="<?php echo e(asset('assets/assets/img/client/video.jpg')); ?>" alt="video">
                         <div class="technology-video">
                             <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=Z0A7OMkYQf8">
                                 <i class="fas fa-play"></i>
@@ -260,13 +260,13 @@
                         </div>
                         
                         <div class="client-animation">
-                            @foreach ($brands->chunk(2) as $chunk)
+                            <?php $__currentLoopData = $brands->chunk(2); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $chunk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="image-fader">
-                                    @foreach ($chunk as $brand)
-                                        <img src="{{ asset($brand->logo) }}" alt="{{ $brand->name }}">
-                                    @endforeach
+                                    <?php $__currentLoopData = $chunk; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <img src="<?php echo e(asset($brand->logo)); ?>" alt="<?php echo e($brand->name); ?>">
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </div>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
 
 
@@ -294,9 +294,9 @@
                 <div class="col-lg-4 offset-lg-1 work-left col-md-6">
                     <div class="work-item wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/1.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/resturon.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f4.png') }}" alt="work"> 
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/1.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/resturon.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f4.png')); ?>" alt="work"> 
                         </div>
                         <div class="work-content">
                             <div class="work-title">
@@ -317,9 +317,9 @@
                     </div>
                     <div class="work-item  wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="0ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/2.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/furnishing.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f3.png') }}" alt="work">
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/2.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/furnishing.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f3.png')); ?>" alt="work">
                         </div>
                         <div class="work-content">
                             <div class="work-title">
@@ -342,9 +342,9 @@
                 <div class="col-lg-4 offset-lg-1 col-md-6">
                     <div class="work-item wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="50ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/3.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/army.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f1.png') }}" alt="work">
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/3.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/army.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f1.png')); ?>" alt="work">
                         </div>
                         <div class="work-content">
                             <div class="work-title">
@@ -365,9 +365,9 @@
                     </div>
                     <div class="work-item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="50ms">
                         <div class="work-img">
-                            <img class="main-image" src="{{ asset('assets/assets/img/work/4.jpg') }}" alt="work">
-                            <img class="title-image" src="{{ asset('assets/assets/img/work/ridezibe.png') }}" alt="work">
-                            <img class="count-image" src="{{ asset('assets/assets/img/work/f2.png') }}" alt="work">
+                            <img class="main-image" src="<?php echo e(asset('assets/assets/img/work/4.jpg')); ?>" alt="work">
+                            <img class="title-image" src="<?php echo e(asset('assets/assets/img/work/ridezibe.png')); ?>" alt="work">
+                            <img class="count-image" src="<?php echo e(asset('assets/assets/img/work/f2.png')); ?>" alt="work">
                         </div>
                         <div class="work-content">
                             <div class="work-title">
@@ -398,7 +398,7 @@
 
     <!--end work-area -->
     <!--start patnar-area -->
-    <section class="section patnar_area bg-cover" style="background-image: url('{{ asset('assets/assets/img/patnar/back.jpg') }}');">
+    <section class="section patnar_area bg-cover" style="background-image: url('<?php echo e(asset('assets/assets/img/patnar/back.jpg')); ?>');">
         <div class="container">
             <div class="row">
                 <h4 class="home-intro__overheading underlined-heading underlined-heading--animate">
@@ -410,18 +410,18 @@
                 </h4>
             </div>
             <div class="row pt-60">
-                @foreach ($achievements as $achievement)
+                <?php $__currentLoopData = $achievements; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $achievement): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="patnar_item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="50ms">
                             <div class="image">
-                                <img src="{{ asset('' . $achievement->image) }}" alt="{{ $achievement->title }}">
+                                <img src="<?php echo e(asset('' . $achievement->image)); ?>" alt="<?php echo e($achievement->title); ?>">
                             </div>
                             <div class="patnar-content">
-                                <h5><a href="#">{{ $achievement->title }}</a></h5>
+                                <h5><a href="#"><?php echo e($achievement->title); ?></a></h5>
                             </div>
                         </div>
                     </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
        
 
@@ -446,4 +446,5 @@
             </div>
         </div>
     </section>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\appdev\resources\views/template/index.blade.php ENDPATH**/ ?>

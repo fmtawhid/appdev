@@ -1,42 +1,38 @@
+@extends('layouts.admin_master')
 
-
-<?php $__env->startSection('content'); ?>
+@section('content')
     <div class="d-flex justify-content-between align-items-center mb-3 mt-3">
-        <h4 class="page-title">Languages</h4>
-        <a class="btn btn-success" href="<?php echo e(route('languages.create')); ?>"> Add New Language</a>
+        <h4 class="page-title">Categories</h4>
+        <a class="btn btn-success" href="{{ route('categories.create') }}"> Add New Category</a>
     </div>
 
     <div class="card">
         <div class="card-body">
-            <table id="languageTable" class="table table-striped dt-responsive nowrap w-100">
+            <table id="categoryTable" class="table table-striped dt-responsive nowrap w-100">
                 <thead>
                     <tr>
                         <th>SL</th>
-                        <th>Stack</th>
                         <th>Name</th>
-                        <th>Icon</th>
-                        <th>Description</th>
+                        <th>Note</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
             </table>
         </div>
     </div>
-<?php $__env->stopSection(); ?>
+@endsection
 
-<?php $__env->startSection('scripts'); ?>
+@section('scripts')
 <script>
     $(document).ready(function () {
-        var table = $('#languageTable').DataTable({
+        var table = $('#categoryTable').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "<?php echo e(route('languages.index')); ?>",
+            ajax: "{{ route('categories.index') }}",
             columns: [
                 { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable:false, searchable:false },
-                { data: 'stack', name: 'stack' },
                 { data: 'name', name: 'name' },
-                { data: 'icon', name: 'icon', orderable:false, searchable:false },
-                { data: 'description', name: 'description' },
+                { data: 'note', name: 'note' },
                 { data: 'actions', name: 'actions', orderable:false, searchable:false },
             ]
         });
@@ -84,6 +80,4 @@
         });
     });
 </script>
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('layouts.admin_master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\appdev\resources\views/admin/language/index.blade.php ENDPATH**/ ?>
+@endsection

@@ -2,7 +2,7 @@
 
 <?php $__env->startSection('content'); ?>
 <div class="container mt-4">
-    <h3>Add New Language</h3>
+    <h3>Add New Category</h3>
 
     <?php if(session('success')): ?>
         <div class="alert alert-success"><?php echo e(session('success')); ?></div>
@@ -20,13 +20,8 @@
 
     <div class="card mt-3">
         <div class="card-body">
-            <form action="<?php echo e(route('languages.store')); ?>" method="POST" enctype="multipart/form-data">
+            <form action="<?php echo e(route('categories.store')); ?>" method="POST">
                 <?php echo csrf_field(); ?>
-
-                <div class="mb-3">
-                    <label class="form-label">Stack <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="stack" value="<?php echo e(old('stack')); ?>" required>
-                </div>
 
                 <div class="mb-3">
                     <label class="form-label">Name <span class="text-danger">*</span></label>
@@ -34,21 +29,16 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Icon</label>
-                    <input type="file" class="form-control" name="icon" accept="image/*">
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Description</label>
-                    <textarea class="form-control" name="description" rows="3"><?php echo e(old('description')); ?></textarea>
+                    <label class="form-label">Note</label>
+                    <textarea class="form-control" name="note" rows="3"><?php echo e(old('note')); ?></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Create</button>
-                <a href="<?php echo e(route('languages.index')); ?>" class="btn btn-secondary">Back to List</a>
+                <a href="<?php echo e(route('categories.index')); ?>" class="btn btn-secondary">Back to List</a>
             </form>
         </div>
     </div>
 </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.admin_master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\appdev\resources\views/admin/language/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.admin_master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\appdev\resources\views/admin/category/create.blade.php ENDPATH**/ ?>

@@ -508,7 +508,7 @@
 
                                  <!-- mega menu -->
                                 </li>
-                                <li><a href="work.html">Product</a><span class="overly-main_icon"></span>
+                                <li><a href="{{route('products')}}">Product</a><span class="overly-main_icon"></span>
                                 
                                 </li>
                                 <li><a href="#">Company <i class="fas fa-angle-down ang-btn"></i></a><span class="overly-main_icon"></span>

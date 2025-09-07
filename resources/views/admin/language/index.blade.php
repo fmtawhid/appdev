@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-3 mt-3">
-        <h4 class="page-title">Programming Languages</h4>
-        <a class="btn btn-success" href="{{ route('languages.create') }}">Add New Language</a>
+        <h4 class="page-title">Languages</h4>
+        <a class="btn btn-success" href="{{ route('languages.create') }}"> Add New Language</a>
     </div>
 
     <div class="card">
@@ -12,6 +12,7 @@
                 <thead>
                     <tr>
                         <th>SL</th>
+                        <th>Stack</th>
                         <th>Name</th>
                         <th>Icon</th>
                         <th>Description</th>
@@ -31,11 +32,12 @@
             serverSide: true,
             ajax: "{{ route('languages.index') }}",
             columns: [
-                { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
+                { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable:false, searchable:false },
+                { data: 'stack', name: 'stack' },
                 { data: 'name', name: 'name' },
-                { data: 'icon', name: 'icon', orderable: false, searchable: false },
+                { data: 'icon', name: 'icon', orderable:false, searchable:false },
                 { data: 'description', name: 'description' },
-                { data: 'actions', name: 'actions', orderable: false, searchable: false },
+                { data: 'actions', name: 'actions', orderable:false, searchable:false },
             ]
         });
 

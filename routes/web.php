@@ -22,6 +22,10 @@ use App\Http\Controllers\Admin\ProgrammingLanguageController;
 use App\Http\Controllers\Admin\ClientReviewController;
 use App\Http\Controllers\Admin\JobOpeningController;
 use App\Http\Controllers\Admin\DedicatedSolutionController;
+use App\Http\Controllers\Admin\LanguageController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
+
 
 
 /*
@@ -35,9 +39,8 @@ use App\Http\Controllers\Admin\DedicatedSolutionController;
 |
 */
 
-Route::get('/', function () {
-    return view('template.index');
-});
+Route::get('/', [PageController::class, 'homePage'])->name('home');
+
 
 
 Route::prefix('panel')->group(function () {
@@ -223,6 +226,29 @@ Route::prefix('panel')->middleware(['auth', 'checkRole:admin'])->group(function 
     Route::middleware(['permission:dedicated_edit'])->get('/dedicated-solutions/{dedicatedSolution}/edit', [DedicatedSolutionController::class, 'edit'])->name('dedicated-solutions.edit');
     Route::middleware(['permission:dedicated_edit'])->put('/dedicated-solutions/{dedicatedSolution}/update', [DedicatedSolutionController::class, 'update'])->name('dedicated-solutions.update');
     Route::middleware(['permission:dedicated_delete'])->delete('/dedicated-solutions/{dedicatedSolution}/destroy', [DedicatedSolutionController::class, 'destroy'])->name('dedicated-solutions.destroy');
+
+    Route::middleware(['permission:language_view'])->get('/languages', [LanguageController::class, 'index'])->name('languages.index');
+    Route::middleware(['permission:language_add'])->get('/languages/create', [LanguageController::class, 'create'])->name('languages.create');
+    Route::middleware(['permission:language_add'])->post('/languages', [LanguageController::class, 'store'])->name('languages.store');
+    Route::middleware(['permission:language_edit'])->get('/languages/{language}/edit', [LanguageController::class, 'edit'])->name('languages.edit');
+    Route::middleware(['permission:language_edit'])->put('/languages/{language}', [LanguageController::class, 'update'])->name('languages.update');
+    Route::middleware(['permission:language_delete'])->delete('/languages/{language}', [LanguageController::class, 'destroy'])->name('languages.destroy');
+
+
+    Route::middleware(['permission:category_view'])->get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+    Route::middleware(['permission:category_add'])->get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+    Route::middleware(['permission:category_add'])->post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+    Route::middleware(['permission:category_edit'])->get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+    Route::middleware(['permission:category_edit'])->put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
+    Route::middleware(['permission:category_delete'])->delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+    Route::middleware(['permission:product_view'])->get('/products', [ProductController::class, 'index'])->name('products.index');
+    Route::middleware(['permission:product_add'])->get('/products/create', [ProductController::class, 'create'])->name('products.create');
+    Route::middleware(['permission:product_add'])->post('/products', [ProductController::class, 'store'])->name('products.store');
+    Route::middleware(['permission:product_edit'])->get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+    Route::middleware(['permission:product_edit'])->put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
+    Route::middleware(['permission:product_delete'])->delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+
 });
 
 

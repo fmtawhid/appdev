@@ -591,6 +591,34 @@
                         </a>
                     </li>
                     <?php endif; ?>
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['language_view', 'language_add', 'language_edit', 'language_delete'])): ?>
+                        <li class="side-nav-item">
+                            <a href="<?php echo e(route('languages.index')); ?>" class="side-nav-link d-flex align-items-center w-100 h-100">
+                                <i class="ri-code-line"></i>
+                                <span>Languages</span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['category_view', 'category_add', 'category_edit', 'category_delete'])): ?>
+                        <li class="side-nav-item">
+                            <a href="<?php echo e(route('categories.index')); ?>" class="side-nav-link d-flex align-items-center w-100 h-100">
+                                <i class="ri-folder-2-line"></i>
+                                <span>Categories</span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['product_view', 'product_add', 'product_edit', 'product_delete'])): ?>
+                        <li class="side-nav-item">
+                            <a href="<?php echo e(route('products.index')); ?>" class="side-nav-link d-flex align-items-center w-100 h-100">
+                                <i class="ri-product-hunt-line"></i>
+                                <span>Products</span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+
+
+                    
 
                     
                     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->any(['review_view', 'review_add', 'review_edit', 'review_delete'])): ?>
@@ -1234,7 +1262,6 @@
 });
 
 </script>
-
 
     <?php echo $__env->yieldContent('scripts'); ?>
 
