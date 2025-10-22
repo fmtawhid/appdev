@@ -21,223 +21,115 @@
         <div class="container container-menu">
             <div class="row pb-40">
                <div class="col-lg-12">
-                    <div class="insight_filtering-top">
-                        <form action="#">
-                            <div class="search-top_form">
-                                <div class="filter-by">
-                                    <h5>Filter content by:</h5>
-                                </div>
-                                <div class="inight_filter-list">
-                                   <select class="form-select">
-                                      <option selected>Type</option>
-                                      <option value="1">video</option>
-                                      <option value="2">report</option>
-                                      <option value="3">e-book</option>
-                                      <option value="3">interview</option>
-                                      <option value="3">Go</option>
-                                    </select>
-                                </div>
-                                <div class="inight_filter-list">
-                                   <select class="form-select">
-                                      <option selected>Industry</option>
-                                      <option value="1">education</option>
-                                      <option value="2">tretment</option>
-                                      <option value="3">healt</option>
-                                      <option value="3">games</option>
-                                      <option value="3">child</option>
-                                    </select>
-                                </div>
-                                <div class="inight_filter-list">
-                                   <select class="form-select">
-                                      <option selected>Technoloyies</option>
-                                      <option value="1">Java</option>
-                                      <option value="2">Phop</option>
-                                      <option value="3">React js</option>
-                                      <option value="3">Devops</option>
-                                      <option value="3">Go</option>
-                                    </select>
-                                </div>
-                                <div class="inight_filter-list">
-                                   <select class="form-select">
-                                      <option selected>Themes</option>
-                                      <option value="1">testimonial</option>
-                                      <option value="2">we work</option>
-                                      <option value="3">clients</option>
-                                      <option value="3">service</option>
-                                      <option value="3">about</option>
-                                    </select>
-                                </div>
-                             </div>
-                             <div class="search-bottom_form">
-                                 <div class="total_show">
-                                     <h5>454 Insights</h5>
-                                 </div>
-                                 <div class="popular_show">
-                                     <div class="filter-by filter-by_two">
-                                        <h5>Sort by:</h5>
-                                    </div>
-                                     <div class="inight_filter-list most_list">
-                                       <select class="form-select">
-                                          <option selected>Most Popular</option>
-                                          <option value="1">Recent</option>
-                                        </select>
-                                    </div>
-                                 </div>
-                             </div>
-                        </form>
+                    <div class="insight_filtering-top mt-5">
+                        <form action="{{ route('products') }}" method="GET">
+    <div class="search-top_form">
+        <!-- Category -->
+        <div class="inight_filter-list">
+            <select class="form-select" name="category" onchange="this.form.submit()">
+                <option value="">All Categories</option>
+                @foreach($categories as $cat)
+                    <option value="{{ $cat->id }}" {{ request('category') == $cat->id ? 'selected' : '' }}>
+                        {{ $cat->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <!-- Language -->
+        <div class="inight_filter-list">
+            <select class="form-select" name="language" onchange="this.form.submit()">
+                <option value="">All Languages</option>
+                @foreach($languages as $lang)
+                    <option value="{{ $lang->id }}" {{ request('language') == $lang->id ? 'selected' : '' }}>
+                        {{ $lang->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <!-- Feature -->
+        <div class="inight_filter-list">
+            <select class="form-select" name="feature" onchange="this.form.submit()">
+                <option value="">All Features</option>
+                @foreach($features as $feature)
+                    <option value="{{ $feature->id }}" {{ request('feature') == $feature->id ? 'selected' : '' }}>
+                        {{ $feature->title }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <!-- Search -->
+        <div class="inight_filter-list">
+            <input type="text" name="search" placeholder="Search products..." value="{{ request('search') }}" class="form-control" onkeypress="if(event.key === 'Enter'){ this.form.submit(); }">
+        </div>
+
+        <!-- Sort -->
+        <div class="inight_filter-list">
+            <select class="form-select" name="sort" onchange="this.form.submit()">
+                <option value="popular" {{ request('sort') == 'popular' ? 'selected' : '' }}>Most Popular</option>
+                <option value="recent" {{ request('sort') == 'recent' ? 'selected' : '' }}>Recent</option>
+            </select>
+        </div>
+    </div>
+</form>
+
                     </div>
                </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="insight-blog-single">
-                        <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in1.jpg') }}" alt="inb">
-                            <div class="read_more-now">
-                                <div class="icon"><i class="far fa-comment-alt"></i></div>
-                                <h4><a href="#">more</a></h4>
+                @foreach($products as $product)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="insight-blog-single">
+                            <div class="img">
+                                {{-- যদি multiple image থাকে, প্রথমটা দেখাও --}}
+                                @if($product->images->count() > 0)
+                                   <img src="{{ asset($product->images->first()->image) }}" alt="{{ $product->title }}">
+                                @else
+                                    <img src="{{ asset('assets/assets/img/default.jpg') }}" alt="default">
+                                @endif
+
+                                <div class="read_more-now">
+                                    <div class="icon"><i class="far fa-comment-alt"></i></div>
+                                    <h4>
+                                        <a href="{{ route('product.details', $product->id) }}">more</a>
+                                    </h4>
+                                </div>
                             </div>
-                        </div>
-                        <div class="insight-content">
-                            <h3><a href="{{route('product.details')}}">How to make your products in front of everyone in the modern world</a></h3>
-                            <div class="insight-btn">
-                                <ul>
-                                    <li><a href="#">react js</a></li>
-                                    <li><a href="#">node js</a></li>
-                                    <li><a href="#">web development</a></li>
-                                    <li><a href="#">web applications</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="insight-blog-single">
-                        <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in3.jpg') }}" alt="inb">
-                            <div class="read_more-now">
-                                <div class="technology-video">
-                                    <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=Z0A7OMkYQf8">
-                                        <i class="fas fa-play"></i>
+
+                            <div class="insight-content">
+                                <h3>
+                                    <a href="{{ route('product.details', $product->id) }}">
+                                        {{ $product->title }}
                                     </a>
+                                </h3>
+
+                                <p>{{ Str::limit($product->description, 80) }}</p>
+
+                                <div class="insight-btn">
+                                    <ul>
+                                        {{-- Category --}}
+                                        @if($product->category)
+                                            <li><a href="#">{{ $product->category->name }}</a></li>
+                                        @endif
+
+                                        {{-- Languages --}}
+                                        @foreach($product->languages as $language)
+                                            <li><a href="#">{{ $language->name }}</a></li>
+                                        @endforeach
+
+                                        {{-- Features --}}
+                                        @foreach($product->features as $feature)
+                                            <li><a href="#">{{ $feature->title }}</a></li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="insight-content">
-                            <h3><a href="insight_detail.html">In the modern age you can share your thoughts with everyone</a></h3>
-                            <div class="insight-btn">
-                                <ul>
-                                    <li><a href="#">python</a></li>
-                                    <li><a href="#">java</a></li>
-                                    <li><a href="#">mobile app</a></li>
-                                    <li><a href="#">applications</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="insight-blog-single">
-                        <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in6.jpg') }}" alt="inb">
-                            <div class="read_more-now">
-                                <div class="icon"><i class="far fa-comment-alt"></i></div>
-                                <h4><a href="#">more</a></h4>
-                            </div>
-                        </div>
-                        <div class="insight-content">
-                            <h3><a href="insight_detail.html">What should you consider first to get a good project?</a></h3>
-                            <div class="insight-btn">
-                                <ul>
-                                    <li><a href="#">react js</a></li>
-                                    <li><a href="#">vue js</a></li>
-                                    <li><a href="#">node js</a></li>
-                                    <li><a href="#">web application</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="insight-blog-single">
-                        <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in4.jpg') }}" alt="inb">
-                            <div class="read_more-now">
-                                <div class="icon"><i class="far fa-comment-alt"></i></div>
-                                <h4><a href="#">more</a></h4>
-                            </div>
-                        </div>
-                        <div class="insight-content">
-                            <h3><a href="insight_detail.html">In the modern age you can share your thoughts with everyone</a></h3>
-                            <div class="insight-btn">
-                                <ul>
-                                    <li><a href="#">node js</a></li>
-                                    <li><a href="#">vue js</a></li>
-                                    <li><a href="#">web design</a></li>
-                                    <li><a href="#">web applications</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="insight-blog-single">
-                        <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in7.jpg') }}" alt="inb">
-                            <div class="read_more-now">
-                                <div class="technology-video">
-                                    <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=Z0A7OMkYQf8">
-                                        <i class="fas fa-play"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="insight-content">
-                            <h3><a href="insight_detail.html">How to make your products in front of everyone in the modern world</a></h3>
-                            <div class="insight-btn">
-                                <ul>
-                                    <li><a href="#">node js</a></li>
-                                    <li><a href="#">vue js</a></li>
-                                    <li><a href="#">app</a></li>
-                                    <li><a href="#">web applications</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="insight-blog-single">
-                        <div class="img">
-                            <img src="{{ asset('assets/assets/img/insight/in2.jpg') }}" alt="inb">
-                            <div class="read_more-now">
-                                <div class="icon"><i class="far fa-comment-alt"></i></div>
-                                <h4><a href="#">more</a></h4>
-                            </div>
-                        </div>
-                        <div class="insight-content">
-                            <h3><a href="insight_detail.html">In the modern age you can share your thoughts with everyone</a></h3>
-                            <div class="insight-btn">
-                                <ul>
-                                    <li><a href="#">node js</a></li>
-                                    <li><a href="#">vue js</a></li>
-                                    <li><a href="#">python</a></li>
-                                    <li><a href="#">web applications</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="insight_blog-more pt-40">
-                    <p>You are viewing 1 of 10 content pieces...</p>
-                    <div class="progress_insight">
-                        <div class="bar" style="width:3%">
-                            <p class="percent"></p>
-                        </div>
-                    </div>
-                    <div class="insight-btn">
-                        <a href="insight_detail.html" class="main_button"><span class="button__label">Go more</span></a>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
         </div>
         <div class="transparent-grid">
