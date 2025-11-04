@@ -34,7 +34,7 @@
                     <select name="category_id" class="form-control" required>
                         <option value="">--Select Category--</option>
                         <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value="<?php echo e($category->id); ?>" <?php echo e($product->category_id == $category->id ? 'selected' : ''); ?>>
+                            <option value="<?php echo e($category->id); ?>" <?php echo e(old('category_id', $product->category_id) == $category->id ? 'selected' : ''); ?>>
                                 <?php echo e($category->name); ?>
 
                             </option>
@@ -46,7 +46,7 @@
                     <label class="form-label">Languages</label>
                     <select name="language_ids[]" class="form-control" multiple>
                         <?php $__currentLoopData = $languages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $language): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value="<?php echo e($language->id); ?>" <?php echo e(in_array($language->id, $product->languages->pluck('id')->toArray()) ? 'selected' : ''); ?>>
+                            <option value="<?php echo e($language->id); ?>" <?php echo e(in_array($language->id, old('language_ids', $product->languages->pluck('id')->toArray())) ? 'selected' : ''); ?>>
                                 <?php echo e($language->name); ?>
 
                             </option>
@@ -61,15 +61,22 @@
 
                 <div class="mb-3">
                     <label class="form-label">Images</label>
-                    <input type="file" name="images[]" class="form-control" multiple>
-                    <div class="mt-2">
-                        <?php $__currentLoopData = $product->images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $img): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="d-inline-block position-relative me-2 mb-2">
-                                <img src="<?php echo e(asset('storage/'.$img->path)); ?>" width="80" class="rounded">
-                                <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 delete-image" data-id="<?php echo e($img->id); ?>">&times;</button>
+                    <div id="images-container">
+                        <?php $__currentLoopData = $product->images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="image-item mb-2">
+                                <input type="file" name="images[]" class="form-control mb-1">
+                                <input type="text" name="alt_texts[]" class="form-control" placeholder="Alt text" value="<?php echo e(old('alt_texts.'.$index, $image->alt_text)); ?>">
+                                <small>Existing: <a href="<?php echo e(asset($image->image)); ?>" target="_blank">View</a></small>
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(count($product->images) == 0): ?>
+                            <div class="image-item mb-2">
+                                <input type="file" name="images[]" class="form-control mb-1">
+                                <input type="text" name="alt_texts[]" class="form-control" placeholder="Alt text">
+                            </div>
+                        <?php endif; ?>
                     </div>
+                    <button type="button" id="addImage" class="btn btn-secondary mt-2">Add Image</button>
                 </div>
 
                 <div class="mb-3">
@@ -77,10 +84,16 @@
                     <div id="features-container">
                         <?php $__currentLoopData = $product->features; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $feature): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="feature-item mb-2">
-                                <input type="text" name="features[<?php echo e($i); ?>][title]" class="form-control mb-1" value="<?php echo e($feature->title); ?>" placeholder="Feature Title">
-                                <textarea name="features[<?php echo e($i); ?>][description]" class="form-control" placeholder="Feature Description"><?php echo e($feature->description); ?></textarea>
+                                <input type="text" name="features[<?php echo e($i); ?>][title]" class="form-control mb-1" placeholder="Feature Title" value="<?php echo e(old('features.'.$i.'.title', $feature->title)); ?>">
+                                <textarea name="features[<?php echo e($i); ?>][description]" class="form-control" placeholder="Feature Description"><?php echo e(old('features.'.$i.'.description', $feature->description)); ?></textarea>
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(count($product->features) == 0): ?>
+                            <div class="feature-item mb-2">
+                                <input type="text" name="features[0][title]" class="form-control mb-1" placeholder="Feature Title">
+                                <textarea name="features[0][description]" class="form-control" placeholder="Feature Description"></textarea>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <button type="button" id="addFeature" class="btn btn-secondary mt-2">Add Feature</button>
                 </div>
@@ -95,7 +108,7 @@
 
 <?php $__env->startSection('scripts'); ?>
 <script>
-let featureIndex = <?php echo e($product->features->count()); ?>;
+let featureIndex = <?php echo e(count($product->features)); ?>;
 $('#addFeature').click(function() {
     let html = `
         <div class="feature-item mb-2">
@@ -107,33 +120,16 @@ $('#addFeature').click(function() {
     featureIndex++;
 });
 
-// Delete single image via ajax
-$('.delete-image').click(function() {
-    let btn = $(this);
-    let imageId = btn.data('id');
-    $.confirm({
-        title: 'Delete Image?',
-        content: 'This action cannot be undone!',
-        buttons: {
-            confirm: function () {
-                $.ajax({
-                    url: '/admin/product-images/' + imageId,
-                    type: 'DELETE',
-                    data: {_token: '<?php echo e(csrf_token()); ?>'},
-                    success: function(res) {
-                        if(res.success) {
-                            toastr.success(res.message);
-                            btn.closest('div').remove();
-                        } else {
-                            toastr.error(res.message);
-                        }
-                    },
-                    error: function() { toastr.error('Something went wrong'); }
-                });
-            },
-            cancel: function () {}
-        }
-    });
+let imageIndex = <?php echo e(count($product->images)); ?>;
+$('#addImage').click(function() {
+    let html = `
+        <div class="image-item mb-2">
+            <input type="file" name="images[]" class="form-control mb-1">
+            <input type="text" name="alt_texts[]" class="form-control" placeholder="Alt text">
+        </div>
+    `;
+    $('#images-container').append(html);
+    imageIndex++;
 });
 </script>
 <?php $__env->stopSection(); ?>

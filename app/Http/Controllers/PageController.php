@@ -29,53 +29,55 @@ class PageController extends Controller
         return view('template.service_detail');
     }
 
-public function products(Request $request)
-{
-    $query = Product::with(['category', 'languages', 'images', 'features']);
+    public function products(Request $request)
+    {
+        $query = Product::with(['category', 'languages', 'images', 'features']);
 
-    // Category filter
-    if ($request->has('category') && $request->category != '') {
-        $query->where('category_id', $request->category);
+        // 🔹 Category filter
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+
+        // 🔹 Language filter (Main fix here)
+        if ($request->filled('language')) {
+            $query->whereHas('languages', function ($q) use ($request) {
+                $q->where('languages.id', $request->language); // ✅ Fixed ambiguous 'id'
+            });
+        }
+
+        // 🔹 Feature filter
+        if ($request->filled('feature')) {
+            $query->whereHas('features', function ($q) use ($request) {
+                $q->where('product_features.id', $request->feature); // ✅ Added table name
+            });
+        }
+
+        // 🔹 Search by title or description
+        if ($request->filled('search')) {
+            $query->where(function ($q) use ($request) {
+                $q->where('title', 'like', '%' . $request->search . '%')
+                ->orWhere('description', 'like', '%' . $request->search . '%');
+            });
+        }
+
+        // 🔹 Sort
+        if ($request->filled('sort') && $request->sort === 'recent') {
+            $query->orderBy('created_at', 'desc');
+        } else {
+            $query->orderBy('products.id', 'desc'); // ✅ Added table name for clarity
+        }
+
+        // 🔹 Get products
+        $products = $query->get();
+
+        // 🔹 For dropdowns
+        $categories = \App\Models\Category::all();
+        $languages  = \App\Models\Language::all();
+        $features   = \App\Models\ProductFeature::all();
+
+        return view('template.products', compact('products', 'categories', 'languages', 'features'));
     }
 
-    // Language filter
-    if ($request->has('language') && $request->language != '') {
-        $query->whereHas('languages', function($q) use ($request) {
-            $q->where('id', $request->language);
-        });
-    }
-
-    // Feature filter
-    if ($request->has('feature') && $request->feature != '') {
-        $query->whereHas('features', function($q) use ($request) {
-            $q->where('id', $request->feature);
-        });
-    }
-
-    // Search by title/description
-    if ($request->has('search') && $request->search != '') {
-        $query->where(function ($q) use ($request) {
-            $q->where('title', 'like', '%' . $request->search . '%')
-              ->orWhere('description', 'like', '%' . $request->search . '%');
-        });
-    }
-
-    // Sort
-    if ($request->has('sort') && $request->sort == 'recent') {
-        $query->orderBy('created_at', 'desc');
-    } else {
-        $query->orderBy('id', 'desc'); // Default
-    }
-
-    $products = $query->get();
-
-    // dropdown গুলাতে option দেখানোর জন্য
-    $categories = \App\Models\Category::all();
-    $languages  = \App\Models\Language::all();
-    $features   = \App\Models\ProductFeature::all();
-
-    return view('template.products', compact('products', 'categories', 'languages', 'features'));
-}
 
 
     public function product_details($id)

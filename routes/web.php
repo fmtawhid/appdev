@@ -254,10 +254,10 @@ Route::prefix('panel')->middleware(['auth', 'checkRole:admin'])->group(function 
 
 Route::controller(PageController::class)->group(function () {
     Route::get('/services', 'services')->name('services');
-    Route::get('/service-details', 'service_details')->name('service.details');
+    Route::get('/service-details/{id}', 'service_details')->name('service.details');
 
     Route::get('/products', 'products')->name('products');
-    Route::get('/product-details', 'product_details')->name('product.details');
+    Route::get('/product-details/{id}', 'product_details')->name('product.details');
 
     Route::get('/about-us', 'about')->name('about');
     Route::get('/contact', 'contact')->name('contact');
